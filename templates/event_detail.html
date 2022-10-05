@@ -26,10 +26,16 @@
 <div class="container">
     <div class="row">
         <div class="col card mb-4  mt-3 left  top">
+            <p>{{ event.excerpt }}</p>
+            <p>{{ event.author }}</p>
+            <p>{{ event.event_added }}</p>
             <div class="card-body">
                 <!-- The event content goes inside the card-text. -->
+                {{ event.description | safe }}
                 <!-- Use the | safe filter inside the template tags -->
-                <p class="card-text "></p>
+                <p class="card-text ">{{ event_excerpt }}</p>
+                <p class="card-test">Tickets available: {{ event.tickets_available }}</p>
+                <h4>Date: {{ event.date }} <br>Time: {{ event.time}}</h4>
             </div>
         </div>
     </div>
