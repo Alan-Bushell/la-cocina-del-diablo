@@ -6,7 +6,7 @@ from .models import Event
 class EventList(generic.ListView):
     model = Event
     queryset = Event.objects.filter(status=1).order_by('-event_added')
-    template_name = 'index.html'
+    template_name = 'events.html'
     paginate_by = 5
 
 
@@ -22,3 +22,15 @@ class EventDetail(View):
             {
                 "event": event,
             })
+
+
+def profile(request):
+    """
+    renders profile page
+    """
+    return render(request, "profile.html")
+
+
+def events(request):
+
+    return render(request, "events.html")
