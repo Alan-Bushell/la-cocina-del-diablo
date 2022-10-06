@@ -24,13 +24,6 @@ class EventDetail(View):
             })
 
 
-def profile(request):
-    """
-    renders profile page
-    """
-    return render(request, "profile.html")
-
-
 def events(request):
 
     return render(request, "events.html")
