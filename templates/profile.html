@@ -3,11 +3,61 @@
 
 {% block content %}
 
-<h1>Welcome to the profile page</h1>
+<h3 class="profile-heading">Profile Page</h2>
 
-Welcome {{ user.username}}
+<div class="container profile-page">
+    <div class="row">
+      <div class="col-sm-12 col-md-4 text-center image-col">
+        <h5><strong>{{ user.username}}'s</strong> Profile</h5>
+        <img src="https://cdn.pixabay.com/photo/2014/11/14/13/29/evil-530640_960_720.jpg" class="profile-image">
+        <h5 class="text-center"><strong>Joined:</strong> 1st March 2022</h5>
+      </div>
+        <div class="col-sm-12 col-md-8 personal-information">
+            <h3><strong>Personal Information</strong></h3>
+            <h5><strong>Name:</strong> {{ user.username }}</h5>
+            <h5><strong>Email:</strong> Sampleemail@fake.com</h5>
+            <h5><strong>Phone:</strong> 0851234567</h5>
+            <p>Change your contact preferences for our Newsletter & upcoming events<br> and ticket info here: <input type="checkbox" id="vehicle1" name="vehicle1" value="Bike"></p>
+        </div>
+    </div>
+</div>
+
+
+<div class="container profile-booking">
+    <div class="row">
+        <div class="col-sm-12 personal-information">
+            <h4 class="underline bookings-heading">Bookings</h4>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-6">
+            <p><strong>Title:</strong></p>
+        </div>
+        <div class="col-sm-3 text-center">
+            <p><strong>Number of Attendees:</strong></p>
+        </div>
+        <div class="col-sm-3 text-center">
+            <p><strong>Status:</strong></p>
+        </div>
+    </div>
+    <hr>
+    <div class="row reservation">
+        <div class="col-sm-6">
+            <p><strong>Title:</strong>Reservation or Event</p>
+            <p><strong>Date:</strong>Sample Date | <strong>Time:</strong>Sample Time</p>
+        </div>
+        <div class="col-sm-3 text-center">
+            <p><strong>3</strong></p>
+        </div>
+        <div class="col-sm-3 text-center">
+            <p><strong>Awaiting Confirmation</strong></p>
+        </div>
+    </div>
+</div>
 
 {%endblock%}
 
-
+<h5>Date: {{ user.username }}</h5>
+            <h5>Time:</h5>
+            <h5>Booking type:</h5>
 

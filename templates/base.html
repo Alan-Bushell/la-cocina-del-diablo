@@ -22,7 +22,6 @@
 <body class="d-flex flex-column h-100 main-bg">
 
     <!-- Navigation -->
-
     <nav class="navbar navbar-expand-lg navbar-light bg-white">
         <div class="container-fluid">
             <a class="navbar-brand" href="{% url 'home' %}">Logo</a>
@@ -31,10 +30,21 @@
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarText">
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <ul class="navbar-nav nav-main-links">
                     <li class="nav-item">
                         <a class="nav-link active" aria-current="page" href="{% url 'home' %}">Home</a>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link" aria-current="page" href="{% url 'about' %}">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" aria-current="page" href="{% url 'restaurant' %}">Restaurant</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" aria-current="page" href="{% url 'events' %}">Events</a>
+                    </li>
+                </ul>
+                <ul class="navbar-nav">
                     {% if user.is_authenticated %}
                     <li class="nav-item">
                         <a class="nav-link" href="{% url 'profile' %}"><i class="fa-solid fa-circle-user"></i></a>
@@ -51,18 +61,14 @@
                     </li>
                     {% endif %}
                 </ul>
-                <span class="navbar-text text-muted">
-                    Restaurant | Bar | Venue to the Morning Stars
-                </span>
             </div>
         </div>
     </nav>
 
-    <main class="flex-shrink-0 main-bg">
-        {% block content %}
+
+    {% block content %}
         <!-- Content Goes here -->
-        {% endblock content %}
-    </main>
+    {% endblock content %}
 
     <!-- Footer -->
     <footer class="footer mt-auto py-3 dark-bg">
