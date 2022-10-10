@@ -28,8 +28,9 @@ class EventDetail(View):
 
 class StarterList(generic.ListView):
     model = Starter
-    queryset = Starter.objects.order_by('-price')
+    queryset = Starter.objects.get
     template_name = 'index.html'
+    paginate_by = 5
 
     def __str__(self):
         return self.title
