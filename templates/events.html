@@ -1,14 +1,13 @@
 {% extends "base.html" %}
 
 {% block content %}
-
 <h1>Events page</h1>
 <div class="container-fluid">
     <div class="row">
         <!-- Events Column -->
         <div class="col-12 mt-3 left">
             <div class="row">
-                {% for event in event.event_list %}
+                {% for event in event_list %}
                 <div class="col-md-4">
                     <div class="card mb-4">
                         <div class="card-body">
