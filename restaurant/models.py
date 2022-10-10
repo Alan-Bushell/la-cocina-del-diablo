@@ -24,6 +24,27 @@ class Menu(models.Model):
         return self.name
 
 
+class Event(models.Model):
+    title = models.CharField(max_length=200)
+    slug = models.SlugField(unique=True, null=True)
+    date = models.DateField(blank=False)
+    time = models.TimeField(blank=False)
+    tickets_available = models.IntegerField()
+    featured_image = CloudinaryField('image', default='placeholder')
+    description = models.TextField()
+    excerpt = models.TextField(blank=True)
+    event_added = models.DateTimeField(auto_now_add=True)
+    author = models.ForeignKey(User, on_delete=models.CASCADE,
+                               related_name="events")
+    status = models.IntegerField(choices=STATUS, default=0)
+
+    class Meta:
+        ordering = ['-event_added']
+
+    def __str__(self):
+        return self.title
+
+
 class Starter(models.Model):
     title = models.CharField(max_length=50)
     description = models.TextField(max_length=200)
