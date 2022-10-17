@@ -1,7 +1,7 @@
 from django.shortcuts import render, get_object_or_404, redirect
 from django.views import generic, View
 from restaurant.forms import BookingForm
-from .models import Menu, Starter, MainDish, Dessert, Event
+from .models import Menu, Starter, MainDish, Dessert, Event, Booking, Customer
 
 # Create your views here.
 
@@ -46,7 +46,8 @@ def profile(request):
     """
     renders profile page
     """
-    return render(request, "profile.html")
+    bookings = Booking.objects.all()
+    return render(request, "profile.html", {'bookings': bookings})
 
 
 def about(request):
