@@ -3,14 +3,15 @@ from datetime import datetime
 from django.urls import reverse_lazy
 from crispy_forms.helper import FormHelper
 from crispy_forms.layout import Submit
+from .models import Booking
+from django.forms import ModelForm
 
 
-class BookingForm(forms.Form):
+class BookingForm(ModelForm):
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
         self.helper = FormHelper(self)
-        self.helper.form_action = reverse_lazy('restaurant')
         self.helper.add_input(Submit('submit', 'Submit'))
 
     fname = forms.CharField(max_length=40)
@@ -22,3 +23,8 @@ class BookingForm(forms.Form):
                                     'min': datetime.now().date()}))
     booking_time = forms.CharField(max_length=5)
     pax = forms.IntegerField()
+
+    class Meta:
+        model = Booking
+        fields = ['fname', 'lname', 'email', 'contact_phone', 'booking_date',
+                  'booking_time', 'pax']

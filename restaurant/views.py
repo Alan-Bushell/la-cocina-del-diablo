@@ -1,4 +1,4 @@
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, get_object_or_404, redirect
 from django.views import generic, View
 from restaurant.forms import BookingForm
 from .models import Menu, Starter, MainDish, Dessert, Event
@@ -60,6 +60,11 @@ def restaurant(request):
     """
     renders restaurant page
     """
+    if request.POST:
+        form = BookingForm(request.POST)
+        if form.is_valid():
+            form.save()
+        return redirect('home')
 
-    context = {'form': BookingForm()}
-    return render(request, "restaurant.html", context)
+    form = BookingForm(request.POST)
+    return render(request, "restaurant.html", {'form': BookingForm})
