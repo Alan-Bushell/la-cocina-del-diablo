@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Menu, Starter, MainDish, Dessert, Event, Booking
+from .models import Menu, Starter, MainDish, Dessert, Event, Booking, Customer
 from django_summernote.admin import SummernoteModelAdmin
 
 # Register your models here.
@@ -24,6 +24,14 @@ class BookingAdmin(SummernoteModelAdmin):
     search_fields = ['id', 'lname', 'booking_date', 'booking_time',
                      'booking_confirmed']
     list_filter = ('booking_confirmed', 'booking_date')
+
+
+@admin.register(Customer)
+class CustomerAdmin(SummernoteModelAdmin):
+
+    list_display = ('user', 'first_name', 'last_name', 'email',
+                    'contact_phone')
+    search_fields = ['user', 'email', 'contact_phone', 'last_name']
 
 
 @admin.register(Menu)

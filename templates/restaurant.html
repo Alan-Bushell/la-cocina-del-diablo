@@ -8,12 +8,11 @@
 Welcome {{ user.username}} 123
 
 
-
+{% if user.is_authenticated %}
 
 {% crispy form %}
 
 
-
-
+{% endif %}
 
 {%endblock%}

@@ -14,9 +14,9 @@
       </div>
         <div class="col-sm-12 col-md-8 personal-information">
             <h3><strong>Personal Information</strong></h3>
-            <h5><strong>Name:</strong> {{ user.username }}</h5>
-            <h5><strong>Email:</strong> Sampleemail@fake.com</h5>
-            <h5><strong>Phone:</strong> 0851234567</h5>
+            <h5><strong>Name:</strong> {{ user.customer.fname}} {{ user.customer.lname }}</h5>
+            <h5><strong>Email:</strong> {{ user.email}}</h5>
+            <h5><strong>Phone:</strong> {{user.contact_phone}}</h5>
             <p>Change your contact preferences for our Newsletter & upcoming events<br> and ticket info here: <input type="checkbox" id="vehicle1" name="vehicle1" value="Bike"></p>
         </div>
     </div>
@@ -29,6 +29,7 @@
             <h4 class="underline bookings-heading">Bookings</h4>
         </div>
     </div>
+    {% for booking in bookings %}
     <div class="row">
         <div class="col-sm-6">
             <p><strong>Title:</strong></p>
@@ -44,7 +45,7 @@
     <div class="row reservation">
         <div class="col-sm-6">
             <p><strong>Title:</strong> Reservation or Event</p>
-            <p><strong>Date:</strong>Sample Date | <strong>Time:</strong>Sample Time</p>
+            <p><strong>Date:</strong>{{ booking.booking_time }} | <strong>Time:</strong>Sample Time</p>
         </div>
         <div class="col-sm-3 text-center">
             <p><strong>3</strong></p>
@@ -53,6 +54,7 @@
             <p><strong><i class="fa-solid fa-circle-exclamation"></i><br>Awaiting<br>Confirmation</strong></p>
         </div>
     </div>
+    {% endfor %}
 </div>
 
 {%endblock%}

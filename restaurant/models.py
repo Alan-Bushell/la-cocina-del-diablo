@@ -6,6 +6,51 @@ from cloudinary.models import CloudinaryField
 STATUS = ((0, "Not Live"), (1, "Live"))
 
 
+class Customer(models.Model):
+    user = models.OneToOneField(User, null=True, on_delete=models.CASCADE)
+    first_name = models.CharField(max_length=40, null=False, blank=False)
+    last_name = models.CharField(max_length=100, null=False, blank=False)
+    email = models.EmailField()
+    contact_phone = models.CharField(max_length=15, null=False, blank=False)
+
+
+class Booking(models.Model):
+    fname = models.CharField(max_length=40, null=False, blank=False)
+    lname = models.CharField(max_length=100, null=False, blank=False)
+    email = models.EmailField()
+    contact_phone = models.CharField(max_length=15, null=False, blank=False)
+    booking_date = models.DateField(null=False, blank=False)
+    booking_time = models.CharField(null=False, blank=False, max_length=5)
+    pax = models.IntegerField(default=2, blank=False)
+    booking_confirmed = models.BooleanField(default=False)
+    customer = models.ForeignKey(Customer, null=True, on_delete=models.CASCADE)
+
+    def __str__(self):
+        return self.fname + ' ' + self.lname + "'s" + ' Booking'
+
+
+class Event(models.Model):
+    title = models.CharField(max_length=200)
+    slug = models.SlugField(unique=True, null=True)
+    date = models.DateField(blank=False)
+    time = models.TimeField(blank=False)
+    tickets_available = models.IntegerField()
+    featured_image = CloudinaryField('image', default='placeholder')
+    description = models.TextField()
+    excerpt = models.TextField(blank=True)
+    event_added = models.DateTimeField(auto_now_add=True)
+    author = models.ForeignKey(User, on_delete=models.CASCADE,
+                               related_name="events")
+    status = models.IntegerField(choices=STATUS, default=0)
+    customer = models.ForeignKey(Customer, null=True, on_delete=models.CASCADE)
+
+    class Meta:
+        ordering = ['-event_added']
+
+    def __str__(self):
+        return self.title
+
+
 class Menu(models.Model):
     name = models.CharField(max_length=100)
     slug = models.SlugField(unique=True, null=True)
@@ -24,42 +69,11 @@ class Menu(models.Model):
         return self.name
 
 
-class Event(models.Model):
-    title = models.CharField(max_length=200)
-    slug = models.SlugField(unique=True, null=True)
-    date = models.DateField(blank=False)
-    time = models.TimeField(blank=False)
-    tickets_available = models.IntegerField()
-    featured_image = CloudinaryField('image', default='placeholder')
-    description = models.TextField()
-    excerpt = models.TextField(blank=True)
-    event_added = models.DateTimeField(auto_now_add=True)
-    author = models.ForeignKey(User, on_delete=models.CASCADE,
-                               related_name="events")
-    status = models.IntegerField(choices=STATUS, default=0)
-
-    class Meta:
-        ordering = ['-event_added']
-
-    def __str__(self):
-        return self.title
-
-
-class Booking(models.Model):
-    fname = models.CharField(max_length=40, null=False, blank=False)
-    lname = models.CharField(max_length=100, null=False, blank=False)
-    email = models.EmailField()
-    contact_phone = models.CharField(max_length=15, null=False, blank=False)
-    booking_date = models.DateField(null=False, blank=False)
-    booking_time = models.CharField(null=False, blank=False, max_length=5)
-    pax = models.IntegerField(default=2, blank=False)
-    booking_confirmed = models.BooleanField(default=False)
-
-
 class Starter(models.Model):
     title = models.CharField(max_length=50)
     description = models.TextField(max_length=200)
     price = models.IntegerField()
+    menu = models.ForeignKey(Menu, null=True, on_delete=models.CASCADE)
 
     def __str__(self):
         return self.title
@@ -69,9 +83,11 @@ class MainDish(models.Model):
     title = models.CharField(max_length=50)
     description = models.TextField(max_length=200)
     price = models.IntegerField()
+    menu = models.ForeignKey(Menu, null=True, on_delete=models.CASCADE)
 
 
 class Dessert(models.Model):
     title = models.CharField(max_length=50)
     description = models.TextField(max_length=200)
     price = models.IntegerField()
+    menu = models.ForeignKey(Menu, null=True, on_delete=models.CASCADE)
