@@ -14,8 +14,8 @@
       </div>
         <div class="col-sm-12 col-md-8 personal-information">
             <h3><strong>Personal Information</strong></h3>
-            <h5><strong>Name:</strong> {{ user.customer.fname}} {{ user.customer.lname }}</h5>
-            <h5><strong>Email:</strong> {{ user.email}}</h5>
+            <h5><strong>Name:</strong> {{ user.username }}</h5>
+            <h5><strong>Email:</strong> {{ user.email }}</h5>
             <h5><strong>Phone:</strong> {{user.contact_phone}}</h5>
             <p>Change your contact preferences for our Newsletter & upcoming events<br> and ticket info here: <input type="checkbox" id="vehicle1" name="vehicle1" value="Bike"></p>
         </div>
@@ -29,7 +29,6 @@
             <h4 class="underline bookings-heading">Bookings</h4>
         </div>
     </div>
-    {% for booking in bookings %}
     <div class="row">
         <div class="col-sm-6">
             <p><strong>Title:</strong></p>
@@ -41,18 +40,27 @@
             <p><strong>Status:</strong></p>
         </div>
     </div>
+    {% for booking in bookings %}
+    
     <hr>
+    
     <div class="row reservation">
         <div class="col-sm-6">
             <p><strong>Title:</strong> Reservation or Event</p>
             <p><strong>Date:</strong>{{ booking.booking_date }} | <strong>Time:</strong>{{booking.booking_time}}</p>
         </div>
         <div class="col-sm-3 text-center">
-            <p><strong>3</strong></p>
+            <p><strong>{{ booking.pax }}</strong></p>
         </div>
-        <div class="col-sm-3 text-center awaiting-confirmation">
-            <p><strong><i class="fa-solid fa-circle-exclamation"></i><br>Awaiting<br>Confirmation</strong></p>
-        </div>
+            {% if booking_confirmed != False %}
+                <div class="col-sm-3 text-center awaiting-confirmation">
+                    <p><strong><i class="fa-solid fa-circle-exclamation"></i><br>Not<br>Confirmed</strong></p>
+                </div>
+            {% else %}
+                <div class="col-sm-3 text-center booking-confirmed">
+                    <p><strong><i class="fa-solid fa-circle-check"></i><br>Booking<br>Confirmed</strong></p>
+                </div>
+            {% endif %}
     </div>
     {% endfor %}
 </div>

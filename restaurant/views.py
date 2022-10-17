@@ -65,7 +65,7 @@ def restaurant(request):
         form = BookingForm(request.POST)
         if form.is_valid():
             form.save()
-        return redirect('home')
+        return redirect('profile')
 
     form = BookingForm(request.POST)
     return render(request, "restaurant.html", {'form': BookingForm})
