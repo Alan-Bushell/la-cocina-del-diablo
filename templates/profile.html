@@ -3,6 +3,7 @@
 
 {% block content %}
 
+{% if user.is_authenticated %}
 <h3 class="profile-heading">Profile Page</h2>
 
 <div class="container profile-page">
@@ -65,9 +66,8 @@
     {% endfor %}
 </div>
 
+{% else %}
+<h3 class="text-center">Please login or sign up to an account to be able to see your Profile Page</h3>
+{% endif %}
+
 {%endblock%}
-
-<h5>Date: {{ user.username }}</h5>
-            <h5>Time:</h5>
-            <h5>Booking type:</h5>
-
