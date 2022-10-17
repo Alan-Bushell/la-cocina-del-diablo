@@ -7,6 +7,30 @@
 
         <h5>Starters:</h5>
     <hr/>
+    <ul>
+        {% for starter in starters %}
+        <li><h5>{{ starter.title }} | {{ starter.price }}</h5>
+            {{ starter.description | safe }}
+        </li>
+        {% endfor %}
+    </ul>
+    <hr>
+    <ul>
+        {% for main in mains %}
+        <li><h5>{{ main.title }} | {{ main.price }}</h5>
+            {{ main.description | safe }}
+        </li>
+        {% endfor %}
+    </ul>
+    <hr>
+    <ul>
+        {% for dessert in desserts %}
+        <li><h5>{{ dessert.title }} | {{ dessert.price }}</h5>
+            {{ dessert.description | safe }}
+        </li>
+        {% endfor %}
+    </ul>
+    <hr>
  
     </div>
 </div>

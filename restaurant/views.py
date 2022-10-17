@@ -39,7 +39,16 @@ class StarterList(generic.ListView):
 
 def index(request):
     # Returns the index.html page
-    return render(request, "index.html")
+    menus = Menu.objects.all()
+    starters = Starter.objects.all()
+    mains = MainDish.objects.all()
+    desserts = Dessert.objects.all()
+    return render(request, "index.html", {
+        'starters': starters,
+        'mains': mains,
+        'desserts': desserts,
+        'menu': menus
+    })
 
 
 def profile(request):
