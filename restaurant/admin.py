@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Menu, Starter, MainDish, Dessert, Event
+from .models import Menu, Starter, MainDish, Dessert, Event, Booking
 from django_summernote.admin import SummernoteModelAdmin
 
 # Register your models here.
@@ -14,6 +14,16 @@ class EventAdmin(SummernoteModelAdmin):
     prepopulated_fields = {'slug': ('title',)}
     list_filter = ('status', 'event_added')
     summernote_fields = ('description')
+
+
+@admin.register(Booking)
+class BookingAdmin(SummernoteModelAdmin):
+
+    list_display = ('id', 'fname', 'lname', 'booking_date', 'booking_time',
+                    'pax', 'booking_confirmed')
+    search_fields = ['id', 'lname', 'booking_date', 'booking_time',
+                     'booking_confirmed']
+    list_filter = ('booking_confirmed', 'booking_date')
 
 
 @admin.register(Menu)

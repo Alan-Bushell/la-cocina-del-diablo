@@ -1,5 +1,5 @@
 {% extends "base.html" %}
-
+{% load crispy_forms_tags %}
 
 {% block content %}
 
@@ -8,16 +8,10 @@
 Welcome {{ user.username}} 123
 
 
-{% for starter in starters %}
-<ul>
-    <li>
-        <p>{{ starter.title }} | {{ starter.price }} </p>
-    </li>
-    <li>
-        <p>{{ starter.description }}</p>
-    </li>
-</ul>
-{% endfor %}
+
+
+{% crispy form %}
+
 
 
 

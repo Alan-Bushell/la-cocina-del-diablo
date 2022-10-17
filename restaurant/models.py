@@ -45,6 +45,17 @@ class Event(models.Model):
         return self.title
 
 
+class Booking(models.Model):
+    fname = models.CharField(max_length=40, null=False, blank=False)
+    lname = models.CharField(max_length=100, null=False, blank=False)
+    email = models.EmailField()
+    contact_phone = models.CharField(max_length=15, null=False, blank=False)
+    booking_date = models.DateField(null=False, blank=False)
+    booking_time = models.CharField(null=False, blank=False, max_length=5)
+    pax = models.IntegerField(default=2, blank=False)
+    booking_confirmed = models.BooleanField(default=False)
+
+
 class Starter(models.Model):
     title = models.CharField(max_length=50)
     description = models.TextField(max_length=200)

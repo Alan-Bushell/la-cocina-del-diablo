@@ -1,5 +1,6 @@
 from django.shortcuts import render, get_object_or_404
 from django.views import generic, View
+from restaurant.forms import BookingForm
 from .models import Menu, Starter, MainDish, Dessert, Event
 
 # Create your views here.
@@ -59,4 +60,6 @@ def restaurant(request):
     """
     renders restaurant page
     """
-    return render(request, "restaurant.html")
+
+    context = {'form': BookingForm()}
+    return render(request, "restaurant.html", context)
