@@ -3,6 +3,7 @@ from django.views import generic, View
 from restaurant.forms import BookingForm
 from .models import Menu, Starter, MainDish, Dessert, Event, Booking, Customer
 from django.contrib.auth.models import User
+from django.contrib import messages
 
 # Create your views here.
 
@@ -89,6 +90,8 @@ def edit_booking(request, booking_id):
         form = BookingForm(request.POST, instance=booking)
         if form.is_valid():
             form.save()
+            messages.success(request,
+                             'Your reservation request has been updated')
         return redirect('profile')
     booking = BookingForm(instance=booking)
     context = {
@@ -100,4 +103,6 @@ def edit_booking(request, booking_id):
 def delete_booking(request, booking_id):
     booking = get_object_or_404(Booking, id=booking_id)
     booking.delete()
+    messages.danger(request,
+                    'Your reservation has been cancelled')
     return redirect('profile')

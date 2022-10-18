@@ -70,6 +70,20 @@
         </div>
     </nav>
 
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 offset-md-2">
+                {% for message in messages %}
+                <div class="alert {{ message.tags}} alert-dismissible fade show" id="msg" role="alert">
+                    {{ message | safe }}
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close">
+                    </button>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+
 
     {% block content %}
         <!-- Content Goes here -->
@@ -78,6 +92,13 @@
     <!-- Footer -->
     <footer class="footer mt-auto py-3 dark-bg">
     </footer>
+    <script>
+        setTimeout(function(){
+            let messages = document.getElementById("msg");
+            let alert = new bootstrap.Alert(messages);
+            alert.close();
+        }, 3000)
+    </script>
 </body>
 
 </html>
