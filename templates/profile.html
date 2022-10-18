@@ -15,9 +15,12 @@
       </div>
         <div class="col-sm-12 col-md-8 personal-information">
             <h3><strong>Personal Information</strong></h3>
-            <h5><strong>Name:</strong> {{ user.username }}</h5>
-            <h5><strong>Email:</strong> {{ user.email }}</h5>
-            <h5><strong>Phone:</strong> {{user.contact_phone}}</h5>
+            <h5><strong>Username:</strong> {{ user.username }} <a href="/edit/{{ user.username }}">Edit</a></h5> 
+            <h5><strong>First Name:</strong> {{ user.fname }} <a href="/edit/{{ user.username }}">Edit</a></h5>
+            <h5><strong>Last Name:</strong> {{ customer.last_name }} <a href="/edit/{{ user.username }}">Edit</a></h5> 
+            <h5><strong>User ID:</strong> {{ user.id }} {{ user.first_name }}</h5> 
+            <h5><strong>Email:</strong> {{ user.email }} <a href="#">Edit</a></h5>
+            <h5><strong>Phone:</strong> {{user.contact_phone}} <a href="#">Edit</a></h5>
             <p>Change your contact preferences for our Newsletter & upcoming events<br> and ticket info here: <input type="checkbox" id="vehicle1" name="vehicle1" value="Bike"></p>
         </div>
     </div>
@@ -42,27 +45,28 @@
         </div>
     </div>
     {% for booking in bookings %}
-    
-    <hr>
-    
-    <div class="row reservation">
-        <div class="col-sm-6">
-            <p><strong>Title:</strong> Reservation or Event</p>
-            <p><strong>Date:</strong>{{ booking.booking_date }} | <strong>Time:</strong>{{booking.booking_time}}</p>
-        </div>
-        <div class="col-sm-3 text-center">
-            <p><strong>{{ booking.pax }}</strong></p>
-        </div>
-            {% if booking_confirmed != False %}
-                <div class="col-sm-3 text-center awaiting-confirmation">
-                    <p><strong><i class="fa-solid fa-circle-exclamation"></i><br>Not<br>Confirmed</strong></p>
+        {% if user.email == booking.email %}
+            <hr>
+            <div class="row reservation">
+                <div class="col-sm-6">
+                    <p><strong>Title:</strong> Reservation or Event</p>
+                    <p><strong>Date:</strong>{{ booking.booking_date }} | <strong>Time:</strong>{{booking.booking_time}}</p>
                 </div>
-            {% else %}
-                <div class="col-sm-3 text-center booking-confirmed">
-                    <p><strong><i class="fa-solid fa-circle-check"></i><br>Booking<br>Confirmed</strong></p>
+                <div class="col-sm-3 text-center">
+                    <p><strong>{{ booking.pax }}</strong></p>
                 </div>
-            {% endif %}
-    </div>
+                    {% if booking_confirmed != False %}
+                        <div class="col-sm-3 text-center awaiting-confirmation">
+                            <p><strong><i class="fa-solid fa-circle-exclamation"></i><br>Not<br>Confirmed</strong></p>
+                            <span><a href="{% url 'edit_booking' booking.id %}" class="event-link">Edit</a></span>
+                        </div>
+                    {% else %}
+                        <div class="col-sm-3 text-center booking-confirmed">
+                            <p><strong><i class="fa-solid fa-circle-check"></i><br>Booking<br>Confirmed</strong></p>
+                        </div>
+                    {% endif %}
+            </div>
+        {% endif %}
     {% endfor %}
 </div>
 

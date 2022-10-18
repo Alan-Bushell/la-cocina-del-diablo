@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% load crispy_forms_tags %}
+
+
+{% block content %}
+
+{% if user.is_authenticated %}
+<h3 class="profile-heading">Edit Profile Page</h2>
+
+<div class="container profile-page">
+    <div class="row">
+      <div class="col-sm-12 col-md-4 text-center image-col">
+        <h5><strong>{{ user.username}}'s</strong> Profile</h5>
+        <img src="https://cdn.pixabay.com/photo/2014/11/14/13/29/evil-530640_960_720.jpg" class="profile-image">
+        <h5 class="text-center"><strong>Joined:</strong> 1st March 2022</h5>
+      </div>
+        <div class="col-sm-12 col-md-8 personal-information">
+            
+        </div>
+    </div>
+</div>
+
+{% else %}
+<h3 class="text-center">Please login or sign up to an account to be able to see your Profile Page</h3>
+{% endif %}
+
+{%endblock%}

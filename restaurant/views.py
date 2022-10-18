@@ -2,6 +2,7 @@ from django.shortcuts import render, get_object_or_404, redirect
 from django.views import generic, View
 from restaurant.forms import BookingForm
 from .models import Menu, Starter, MainDish, Dessert, Event, Booking, Customer
+from django.contrib.auth.models import User
 
 # Create your views here.
 
@@ -47,7 +48,7 @@ def index(request):
         'starters': starters,
         'mains': mains,
         'desserts': desserts,
-        'menu': menus
+        'menus': menus
     })
 
 
@@ -56,7 +57,8 @@ def profile(request):
     renders profile page
     """
     bookings = Booking.objects.all()
-    return render(request, "profile.html", {'bookings': bookings})
+    return render(request, "profile.html",
+                  {'bookings': bookings})
 
 
 def about(request):
@@ -78,3 +80,18 @@ def restaurant(request):
 
     form = BookingForm(request.POST)
     return render(request, "restaurant.html", {'form': BookingForm})
+
+
+def edit_booking(request, booking_id):
+    booking = get_object_or_404(Booking, id=booking_id)
+    form = BookingForm(instance=booking)
+    if request.POST:
+        form = BookingForm(request.POST, instance=booking)
+        if form.is_valid():
+            form.save()
+        return redirect('profile')
+    booking = BookingForm(instance=booking)
+    context = {
+        'form': form
+    }
+    return render(request, 'edit_booking.html', context)

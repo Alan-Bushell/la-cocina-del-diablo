@@ -45,7 +45,6 @@ class Event(models.Model):
     author = models.ForeignKey(User, on_delete=models.CASCADE,
                                related_name="events")
     status = models.IntegerField(choices=STATUS, default=0)
-    customer = models.ForeignKey(Customer, null=True, on_delete=models.CASCADE)
 
     class Meta:
         ordering = ['-event_added']
