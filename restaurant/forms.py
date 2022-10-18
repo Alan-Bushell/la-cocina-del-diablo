@@ -3,7 +3,7 @@ from datetime import datetime
 from django.urls import reverse_lazy
 from crispy_forms.helper import FormHelper
 from crispy_forms.layout import Submit
-from .models import Booking, Customer
+from .models import Booking, Customer, User
 from django.forms import ModelForm
 
 
@@ -16,7 +16,7 @@ class BookingForm(ModelForm):
 
     fname = forms.CharField(max_length=40)
     lname = forms.CharField(max_length=100)
-    email = forms.EmailField()
+    email = forms.EmailField(required=True)
     contact_phone = forms.CharField(max_length=15)
     booking_date = forms.DateField(widget=forms.DateInput
                                    (attrs={'type': 'date',
