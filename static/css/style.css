@@ -76,6 +76,7 @@ hr{
 
 .text-center{
     align-self: center;
+    text-align: center;
 }
 
 .reservation{
@@ -200,3 +201,29 @@ form{
     border: 1px solid #ccc;
     border-top: none;
   }
+
+  .menu-items{
+    list-style: none;
+  }
+
+  .menu-desc{
+    text-align: center;
+  }
+
+  li.menu-items>p{
+    text-align: center;
+  }
+
+  hr.menu-hr{
+    width: 50%;
+    margin-left: 25%;
+  }
+
+  #set-menu{
+    width: 75%;
+    margin-left: 12.5%;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+  }
+
+ 

@@ -74,19 +74,51 @@
   </div>
   
   <!-- Tab content -->
+  <!--A la carte content-->
   <div id="a-la-carte" class="tabcontent">
-    <h3>A la carte Menu</h3>
-    <p>See below our A la cart menu</p>
+    <h3 class="text-center">A la carte Menu</h3>
+    <p class="text-center">See below our A la cart menu</p>
   </div>
   
+  <!--Set menu Content-->
   <div id="set-menu" class="tabcontent">
-    <h3>Set Menu for 2</h3>
-    <p>Check out our set menu for 2 at a great price.</p>
+    <h3 class="text-center">Set Menu for 2</h3>
+    <p class="text-center">Check out our set menu for 2 at a great price.</p>
+    <!--Starters-->
+    <h4 class="text-center">Starters:</h4>
+    <hr class="menu-hr">
+    <ul>
+        {% for starter in starters %}
+        <li class="menu-items"><h5 class="text-center">{{ starter.title }} | {{ starter.price }}</h5>
+            <p class="menu-desc">{{ starter.description | safe }}</p>
+        </li>
+        {% endfor %}
+    </ul>
+        <!--Mains-->
+    <h4 class="text-center">Main Dishes:</h4>
+    <hr class="menu-hr">
+    <ul>
+        {% for main in mains %}
+        <li  class="menu-items"><h5 class="text-center">{{ main.title }} | {{ main.price }}</h5>
+            <p class="menu-desc">{{ main.description | safe }}</p>
+        </li>
+        {% endfor %}
+    </ul>
+        <!--Desserts-->
+    <h4 class="text-center">Desserts:</h4>
+    <hr class="menu-hr">
+    <ul>
+        {% for dessert in desserts %}
+        <li  class="menu-items"><h5 class="text-center">{{ dessert.title }} | {{ dessert.price }}</h5>
+            <p class="menu-desc">{{ dessert.description | safe }}</p>
+        </li>
+        {% endfor %}
+    </ul>
   </div>
   
   <div id="theatre-menu" class="tabcontent">
-    <h3>Theatre Menu</h3>
-    <p>Check out our pre-theatre menmu. Ideal for those looking to be in and out quickly.</p>
+    <h3 class="text-center">Theatre Menu</h3>
+    <p class="text-center">Check out our pre-theatre menu. Ideal for those looking to be in and out quickly.</p>
   </div>
  
 
