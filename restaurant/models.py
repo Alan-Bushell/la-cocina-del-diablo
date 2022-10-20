@@ -4,6 +4,8 @@ from cloudinary.models import CloudinaryField
 # Create your models here.
 
 STATUS = ((0, "Not Live"), (1, "Live"))
+BOOKING_STATUS = ((0, "Awaiting Confirmation"), (1, "Confirm Booking"),
+                  (2, "Booking Declined"))
 
 
 class Customer(models.Model):
@@ -25,7 +27,7 @@ class Booking(models.Model):
     booking_date = models.DateField(null=False, blank=False)
     booking_time = models.CharField(null=False, blank=False, max_length=5)
     pax = models.IntegerField(default=2, blank=False)
-    booking_confirmed = models.BooleanField(default=False)
+    booking_status = models.IntegerField(choices=BOOKING_STATUS, default=0)
     customer = models.ForeignKey(Customer, null=True, on_delete=models.CASCADE)
 
     def __str__(self):

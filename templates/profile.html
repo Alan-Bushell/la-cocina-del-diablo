@@ -55,18 +55,24 @@
                 <div class="col-sm-3 text-center">
                     <p><strong>{{ booking.pax }}</strong></p>
                 </div>
-                    {% if booking.booking_confirmed == False %}
+                    {% if booking.booking_status == 0 %}
                         <div class="col-sm-3 text-center awaiting-confirmation">
-                            <p><strong><i class="fa-solid fa-circle-exclamation"></i><br>Not<br>Confirmed</strong></p>
+                            <p><strong><i class="fa-solid fa-circle-exclamation"></i><br>Awaiting<br>Confirmation</strong></p>
                             <span><a href="{% url 'edit_booking' booking.id %}" class="event-link">Edit</a></span>
                             <span><a href="{% url 'delete_booking' booking.id %}" class="event-link">Cancel</a></span>
                         </div>
-                    {% else %}
+                    {% elif booking.booking_status == 1 %}
                         <div class="col-sm-3 text-center booking-confirmed">
                             <p><strong><i class="fa-solid fa-circle-check"></i><br>Booking<br>Confirmed</strong></p>
                             <span><a href="{% url 'edit_booking' booking.id %}" class="event-link">Edit</a></span>
                             <span><a href="{% url 'delete_booking' booking.id %}" class="event-link">Cancel</a></span>
                         </div>
+                    {% else %}
+                    <div class="col-sm-3 text-center booking-declined">
+                        <p><strong><i class="fa-solid fa-circle-xmark"></i></i><br>Booking<br>Declined</strong></p>
+                        <span><a href="{% url 'edit_booking' booking.id %}" class="event-link">Edit</a></span>
+                        <span><a href="{% url 'delete_booking' booking.id %}" class="event-link">Cancel</a></span>
+                    </div>
                     {% endif %}
             </div>
             <p>user Id through booking model: {{ booking.customer.user.id}} | user Id: {{ user.id }}</p>

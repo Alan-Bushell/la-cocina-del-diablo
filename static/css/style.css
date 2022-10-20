@@ -68,11 +68,20 @@ hr{
 }
 
 .awaiting-confirmation{
-    color: orangered;
+    color: goldenrod;
     margin-top: 5px;
 }
 
 .fa-circle-exclamation{
+    font-size: 24px;
+}
+
+.booking-declined{
+    color: orangered;
+    margin-top: 5px;
+}
+
+.fa-circle-xmark{
     font-size: 24px;
 }
 

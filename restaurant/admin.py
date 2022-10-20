@@ -20,10 +20,10 @@ class EventAdmin(SummernoteModelAdmin):
 class BookingAdmin(SummernoteModelAdmin):
 
     list_display = ('id', 'fname', 'lname', 'booking_date', 'booking_time',
-                    'pax', 'booking_confirmed')
+                    'pax', 'booking_status')
     search_fields = ['id', 'lname', 'booking_date', 'booking_time',
-                     'booking_confirmed']
-    list_filter = ('booking_confirmed', 'booking_date')
+                     'booking_status']
+    list_filter = ('booking_status', 'booking_date')
 
 
 @admin.register(Customer)
