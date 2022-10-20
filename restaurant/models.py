@@ -31,7 +31,7 @@ class Booking(models.Model):
     customer = models.ForeignKey(Customer, null=True, on_delete=models.CASCADE)
 
     def __str__(self):
-        return self.fname + ' ' + self.lname + "'s" + ' Booking'
+        return self.first_name + ' ' + self.last_name + "'s" + ' Booking'
 
 
 class Event(models.Model):

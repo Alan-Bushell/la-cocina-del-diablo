@@ -77,6 +77,8 @@ def restaurant(request):
         form = BookingForm(request.POST)
         if form.is_valid():
             form.save()
+        messages.success(request,
+                         'Your reservation request has been sent')
         return redirect('profile')
 
     form = BookingForm(request.POST)
@@ -103,6 +105,14 @@ def edit_booking(request, booking_id):
 def delete_booking(request, booking_id):
     booking = get_object_or_404(Booking, id=booking_id)
     booking.delete()
-    messages.danger(request,
-                    'Your reservation has been cancelled')
+    messages.warning(request,
+                     'Your reservation has been cancelled')
     return redirect('profile')
+
+
+def delete_account(request, user_id):
+    user = get_object_or_404(User, id=user_id)
+    user.delete()
+    messages.warning(request,
+                     'Your Account has been successfully closed')
+    return redirect('home')

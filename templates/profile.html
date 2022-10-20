@@ -15,13 +15,37 @@
       </div>
         <div class="col-sm-12 col-md-8 personal-information">
             <h3><strong>Personal Information</strong></h3>
-            <h5><strong>Username:</strong> {{ user.username }} <a href="/edit/{{ user.username }}">Edit</a></h5> 
-            <h5><strong>First Name:</strong> {{ user.first_name }} <a href="/edit/{{ user.username }}">Edit</a></h5>
-            <h5><strong>Last Name:</strong> {{ customer.last_name }} <a href="/edit/{{ user.username }}">Edit</a></h5> 
+            <h5><strong>Username:</strong> {{ user.username }} <a href="/edit/{{ user.username }}">Edit</a></h5>  
             <h5><strong>User ID:</strong> {{ user.id }} {{ user.first_name }}</h5> 
             <h5><strong>Email:</strong> {{ user.email }} <a href="#">Edit</a></h5>
             <h5><strong>Phone:</strong> {{user.contact_phone}} <a href="#">Edit</a></h5>
             <p>Change your contact preferences for our Newsletter & upcoming events<br> and ticket info here: <input type="checkbox" id="vehicle1" name="vehicle1" value="Bike"></p>
+            
+              <!-- Close account modal -->
+            <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#closeAccountModal">
+                Delete Account
+            </button>
+            
+            <!-- Modal -->
+            <div class="modal fade" id="closeAccountModal" tabindex="-1" aria-labelledby="ModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                    <h5 class="modal-title" id="ModalLabel">Close account</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                    Are you sure you would like to close your account?
+                    </div>
+                    <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Go back</button>
+                    <a href="{% url 'delete_account' user.id %}"><button type="button" class="btn btn-danger">Cancel Account</button></a>
+                    </div>
+                </div>
+                </div>
+            </div>
+
+             <!-- End of modal-->
         </div>
     </div>
 </div>
@@ -47,37 +71,37 @@
     {% for booking in bookings %}
         {% if user.email == booking.email %}
             <hr>
-            {{ loop.index }}
-            <div class="row reservation">
-                <div class="col-sm-6">
+            <!-- Reservation Block -->
+            <div class="row {% if forloop.counter0|divisibleby:2 %} reservation {% else %} alternate-reservation {% endif %}">
+                <!-- Left Column | User information and booking details-->
+                <div class="col-sm-6 details-col">
                     <p><strong>Title:</strong> Restaurant Reservation for {{booking.first_name }} {{booking.last_name}}</p>
                     <p><strong>Date:</strong>{{ booking.booking_date }} | <strong>Time:</strong>{{booking.booking_time}}</p>
                 </div>
+                <!-- Middle Column | Number of attendees-->
                 <div class="col-sm-3 text-center">
                     <p><strong>{{ booking.number_of_attendees }}</strong></p>
                 </div>
+                <!-- Right Column | Booking Confirmation Status-->
                     {% if booking.booking_status == 0 %}
                         <div class="col-sm-3 text-center awaiting-confirmation">
                             <p><strong><i class="fa-solid fa-circle-exclamation"></i><br>Awaiting<br>Confirmation</strong></p>
                             <span><a href="{% url 'edit_booking' booking.id %}" class="event-link">Edit</a></span>
-                            <span><a href="{% url 'delete_booking' booking.id %}" class="event-link">Cancel</a></span>
+                            <span><a href="{% url 'delete_booking' booking.id %}" class="cancel-booking-link">Cancel Request <i class="fa-regular fa-trash-can"></i></a></span>
                         </div>
                     {% elif booking.booking_status == 1 %}
                         <div class="col-sm-3 text-center booking-confirmed">
                             <p><strong><i class="fa-solid fa-circle-check"></i><br>Booking<br>Confirmed</strong></p>
-                            <span><a href="{% url 'edit_booking' booking.id %}" class="event-link">Edit</a></span>
-                            <span><a href="{% url 'delete_booking' booking.id %}" class="event-link">Cancel</a></span>
+                            <span><a href="{% url 'delete_booking' booking.id %}" class="cancel-booking-link">Cancel Booking <i class="fa-regular fa-trash-can"></i></a></span>
                         </div>
                     {% else %}
                     <div class="col-sm-3 text-center booking-declined">
                         <p><strong><i class="fa-solid fa-circle-xmark"></i></i><br>Booking<br>Declined</strong></p>
-                        <span><a href="{% url 'edit_booking' booking.id %}" class="event-link">Edit</a></span>
-                        <span><a href="{% url 'delete_booking' booking.id %}" class="event-link">Cancel</a></span>
+                        <span><a href="{% url 'delete_booking' booking.id %}" class="cancel-booking-link">Delete Request <i class="fa-regular fa-trash-can"></i></a></span>
                     </div>
                     {% endif %}
             </div>
-            <p>user Id through booking model: {{ booking.customer.user.id}} | user Id: {{ user.id }}</p>
-        {% endif %}
+            {% endif %}
     {% endfor %}
 </div>
 

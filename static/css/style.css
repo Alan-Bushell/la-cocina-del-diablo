@@ -51,7 +51,13 @@ hr{
 }
 
 .reservation{
-    background-color: rgba(0, 0, 0, 0.3);
+    background-color: rgba(245, 114, 7, 0.288);
+    color: white;
+}
+
+.alternate-reservation{
+    background-color: brown;
+    color: white;
 }
 
 .underline{
@@ -67,9 +73,13 @@ hr{
     border-top: 0;
 }
 
+.details-col{
+    margin: auto;
+}
+
 .awaiting-confirmation{
     color: goldenrod;
-    margin-top: 5px;
+    margin: 10px 0;
 }
 
 .fa-circle-exclamation{
@@ -78,7 +88,7 @@ hr{
 
 .booking-declined{
     color: orangered;
-    margin-top: 5px;
+    margin: 10px 0;
 }
 
 .fa-circle-xmark{
@@ -87,11 +97,23 @@ hr{
 
 .booking-confirmed{
     color: green;
-    margin-top: 5px;
+    margin: 10px 0;
 }
 
 .fa-circle-check{
     font-size: 24px;
+}
+
+.fa-trash-can{
+    color: red;
+    font-size: 18px;
+}
+
+.cancel-booking-link{
+    text-decoration: none;
+    color: red;
+    font-weight: 500;
+    margin-bottom: 10px;
 }
 
 form{
