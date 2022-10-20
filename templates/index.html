@@ -32,7 +32,7 @@
     </div>
     <div class="col">
       <div class="card h-100">
-        <img src="https://mdbcdn.b-cdn.net/img/new/standard/city/043.webp" class="card-img-top"
+        <img src="{% static 'images/small-restaurant.jpg' %}" class="card-img-top"
           alt="Los Angeles Skyscrapers" />
         <div class="card-body">
           <h5 class="card-title">Restaurant</h5>
@@ -46,7 +46,7 @@
     </div>
     <div class="col">
       <div class="card h-100">
-        <img src="{% static 'images/venue.jpg' %}" class="card-img-top"
+        <img src="{% static 'images/venue2.jpg' %}" class="card-img-top"
           alt="Palm Springs Road" />
         <div class="card-body">
           <h5 class="card-title">Venue</h5>
@@ -63,9 +63,34 @@
     </div>
   </div>
 </div>
-
 <!--Menu Section-->
-<div class="container-fluid">
+<h3 class="text-center">Menus</h3>
+
+<!-- Tab links -->
+<div class="tab">
+    <button class="tablinks" onclick="openMenu(event, 'a-la-carte')">A la carte</button>
+    <button class="tablinks" onclick="openMenu(event, 'set-menu')">Set Menu for 2</button>
+    <button class="tablinks" onclick="openMenu(event, 'theatre-menu')">Theatre Menu</button>
+  </div>
+  
+  <!-- Tab content -->
+  <div id="a-la-carte" class="tabcontent">
+    <h3>A la carte Menu</h3>
+    <p>See below our A la cart menu</p>
+  </div>
+  
+  <div id="set-menu" class="tabcontent">
+    <h3>Set Menu for 2</h3>
+    <p>Check out our set menu for 2 at a great price.</p>
+  </div>
+  
+  <div id="theatre-menu" class="tabcontent">
+    <h3>Theatre Menu</h3>
+    <p>Check out our pre-theatre menmu. Ideal for those looking to be in and out quickly.</p>
+  </div>
+ 
+
+<!-- <div class="container-fluid">
     <div class="row">
 
         <h5>Starters:</h5>
@@ -97,7 +122,7 @@
  
     </div>
 </div>
-
+-->
 
 
 

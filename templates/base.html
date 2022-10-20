@@ -95,7 +95,10 @@
             let alert = new bootstrap.Alert(messages);
             alert.close();
         }, 3000)
-    </script>
+    </script>     
+    {% block js %}
+    <script type="text/javascript" src="{% static 'js/script.js' %}"></script>
+    {% endblock %}
 </body>
 
 </html>
