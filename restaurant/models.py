@@ -20,13 +20,13 @@ class Customer(models.Model):
 
 
 class Booking(models.Model):
-    fname = models.CharField(max_length=40, null=False, blank=False)
-    lname = models.CharField(max_length=100, null=False, blank=False)
+    first_name = models.CharField(max_length=40, null=False, blank=False)
+    last_name = models.CharField(max_length=100, null=False, blank=False)
     email = models.EmailField()
     contact_phone = models.CharField(max_length=15, null=False, blank=False)
     booking_date = models.DateField(null=False, blank=False)
     booking_time = models.CharField(null=False, blank=False, max_length=5)
-    pax = models.IntegerField(default=2, blank=False)
+    number_of_attendees = models.IntegerField(default=2, blank=False)
     booking_status = models.IntegerField(choices=BOOKING_STATUS, default=0)
     customer = models.ForeignKey(Customer, null=True, on_delete=models.CASCADE)
 

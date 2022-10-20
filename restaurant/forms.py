@@ -14,17 +14,17 @@ class BookingForm(ModelForm):
         self.helper = FormHelper(self)
         self.helper.add_input(Submit('submit', 'Submit'))
 
-    fname = forms.CharField(max_length=40)
-    lname = forms.CharField(max_length=100)
+    first_name = forms.CharField(max_length=40)
+    last_name = forms.CharField(max_length=100)
     email = forms.EmailField(required=True)
     contact_phone = forms.CharField(max_length=15)
     booking_date = forms.DateField(widget=forms.DateInput
                                    (attrs={'type': 'date',
                                     'min': datetime.now().date()}))
     booking_time = forms.CharField(max_length=5)
-    pax = forms.IntegerField()
+    number_of_attendees = forms.IntegerField()
 
     class Meta:
         model = Booking
-        fields = ['fname', 'lname', 'email', 'contact_phone', 'booking_date',
-                  'booking_time', 'pax']
+        fields = ['first_name', 'last_name', 'email', 'contact_phone',
+                  'booking_date', 'booking_time', 'number_of_attendees']

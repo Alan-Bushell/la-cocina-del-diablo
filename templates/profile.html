@@ -16,7 +16,7 @@
         <div class="col-sm-12 col-md-8 personal-information">
             <h3><strong>Personal Information</strong></h3>
             <h5><strong>Username:</strong> {{ user.username }} <a href="/edit/{{ user.username }}">Edit</a></h5> 
-            <h5><strong>First Name:</strong> {{ user.fname }} <a href="/edit/{{ user.username }}">Edit</a></h5>
+            <h5><strong>First Name:</strong> {{ user.first_name }} <a href="/edit/{{ user.username }}">Edit</a></h5>
             <h5><strong>Last Name:</strong> {{ customer.last_name }} <a href="/edit/{{ user.username }}">Edit</a></h5> 
             <h5><strong>User ID:</strong> {{ user.id }} {{ user.first_name }}</h5> 
             <h5><strong>Email:</strong> {{ user.email }} <a href="#">Edit</a></h5>
@@ -47,13 +47,14 @@
     {% for booking in bookings %}
         {% if user.email == booking.email %}
             <hr>
+            {{ loop.index }}
             <div class="row reservation">
                 <div class="col-sm-6">
-                    <p><strong>Title:</strong> Restaurant Reservation for {{booking.fname }} {{booking.lname}}</p>
+                    <p><strong>Title:</strong> Restaurant Reservation for {{booking.first_name }} {{booking.last_name}}</p>
                     <p><strong>Date:</strong>{{ booking.booking_date }} | <strong>Time:</strong>{{booking.booking_time}}</p>
                 </div>
                 <div class="col-sm-3 text-center">
-                    <p><strong>{{ booking.pax }}</strong></p>
+                    <p><strong>{{ booking.number_of_attendees }}</strong></p>
                 </div>
                     {% if booking.booking_status == 0 %}
                         <div class="col-sm-3 text-center awaiting-confirmation">
