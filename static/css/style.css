@@ -80,13 +80,13 @@ hr{
 }
 
 .reservation{
-    background-color: rgba(245, 114, 7, 0.288);
+    background-color: rgba(34, 33, 32, 0.9);
     color: white;
 }
 
 .alternate-reservation{
-    background-color: brown;
-    color: white;
+    background-color: #f3ecec;
+    color: black;
 }
 
 .underline{
@@ -107,7 +107,7 @@ hr{
 }
 
 .awaiting-confirmation{
-    color: goldenrod;
+    color: #ffa90d;
     margin: 10px 0;
 }
 
@@ -116,7 +116,7 @@ hr{
 }
 
 .booking-declined{
-    color: orangered;
+    color: #ff0505;
     margin: 10px 0;
 }
 
@@ -125,7 +125,7 @@ hr{
 }
 
 .booking-confirmed{
-    color: green;
+    color: #15cd15;
     margin: 10px 0;
 }
 
@@ -296,4 +296,9 @@ footer{
 .event-link{
     text-decoration: none;
     color: black;
+}
+
+.edit-button{
+    text-decoration: none;
+    color: blue;
 }

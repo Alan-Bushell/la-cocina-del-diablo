@@ -86,7 +86,7 @@
                     {% if booking.booking_status == 0 %}
                         <div class="col-sm-3 text-center awaiting-confirmation">
                             <p><strong><i class="fa-solid fa-circle-exclamation"></i><br>Awaiting<br>Confirmation</strong></p>
-                            <span><a href="{% url 'edit_booking' booking.id %}" class="event-link">Edit</a></span>
+                            <span><a href="{% url 'edit_booking' booking.id %}" class="edit-button">Edit</a></span>
                             <span><a href="{% url 'delete_booking' booking.id %}" class="cancel-booking-link">Cancel Request <i class="fa-regular fa-trash-can"></i></a></span>
                         </div>
                     {% elif booking.booking_status == 1 %}
