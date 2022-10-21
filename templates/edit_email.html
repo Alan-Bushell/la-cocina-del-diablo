@@ -1,7 +1,6 @@
 {% extends "base.html" %}
 {% load crispy_forms_tags %}
 
-
 {% block content %}
 
 {% if user.is_authenticated %}
@@ -16,10 +15,10 @@
       </div>
         <div class="col-sm-12 col-md-8 personal-information">
           <h3><strong>Personal Information</strong></h3>
-            <h5>{% crispy form %}</h5>  
+            <h5><strong>Username:</strong> {{ user.username }}</h5>  
             <h5><strong>Account Number:</strong> 100{{ user.id }} {{ user.first_name }}</h5> 
-            <h5><strong>Email:</strong> {{ user.email }} <a href="#">Edit</a></h5>
-            <h5><strong>Phone:</strong> {{user.contact_phone}} <a href="#">Edit</a></h5>
+            <h5>{% crispy form %}</h5>
+            <h5><strong>Phone:</strong> {{user.contact_phone}}</h5>
             <p>Change your contact preferences for our Newsletter & upcoming events<br> and ticket info here: <input type="checkbox" id="vehicle1" name="vehicle1" value="Bike"></p>
 
         </div>

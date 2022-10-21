@@ -15,9 +15,9 @@
       </div>
         <div class="col-sm-12 col-md-8 personal-information">
             <h3><strong>Personal Information</strong></h3>
-            <h5><strong>Username:</strong> {{ user.username }} <a href="/edit/{{ user.username }}">Edit</a></h5>  
-            <h5><strong>User ID:</strong> {{ user.id }} {{ user.first_name }}</h5> 
-            <h5><strong>Email:</strong> {{ user.email }} <a href="#">Edit</a></h5>
+            <h5><strong>Username:</strong> {{ user.username }} <a href="{% url 'edit_username' user.id %}">Edit</a></h5>  
+            <h5><strong>Account Number:</strong> 100{{ user.id }} {{ user.first_name }}</h5> 
+            <h5><strong>Email:</strong> {{ user.email }} <a href="{% url 'edit_email' user.id %}">Edit</a></h5>
             <h5><strong>Phone:</strong> {{user.contact_phone}} <a href="#">Edit</a></h5>
             <p>Change your contact preferences for our Newsletter & upcoming events<br> and ticket info here: <input type="checkbox" id="vehicle1" name="vehicle1" value="Bike"></p>
 
@@ -77,6 +77,7 @@
                 <div class="col-sm-6 details-col">
                     <p><strong>Title:</strong> Restaurant Reservation for {{booking.first_name }} {{booking.last_name}}</p>
                     <p><strong>Date:</strong>{{ booking.booking_date }} | <strong>Time:</strong>{{booking.booking_time}}</p>
+                    <p><strong>Booking Number:</strong> LA{{ booking.id }}</p>
                 </div>
                 <!-- Middle Column | Number of attendees-->
                 <div class="col-sm-3 text-center">

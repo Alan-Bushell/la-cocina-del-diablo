@@ -12,6 +12,8 @@ urlpatterns = [
          name='delete_booking'),
     path('delete_account/<user_id>', views.delete_account,
          name='delete_account'),
+    path('edit_username/<user_id>', views.edit_username, name='edit_username'),
+    path('edit_email/<user_id>', views.edit_email, name='edit_email'),
     path('events/', views.EventList.as_view(), name='events'),
     path('<slug:slug>/', views.EventDetail.as_view(), name='event_detail'),
 ]

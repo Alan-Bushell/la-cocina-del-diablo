@@ -28,7 +28,6 @@ class Booking(models.Model):
     booking_time = models.CharField(null=False, blank=False, max_length=5)
     number_of_attendees = models.IntegerField(default=2, blank=False)
     booking_status = models.IntegerField(choices=BOOKING_STATUS, default=0)
-    customer = models.ForeignKey(Customer, null=True, on_delete=models.CASCADE)
 
     def __str__(self):
         return self.first_name + ' ' + self.last_name + "'s" + ' Booking'

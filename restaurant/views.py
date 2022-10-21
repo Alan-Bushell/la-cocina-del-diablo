@@ -1,6 +1,6 @@
 from django.shortcuts import render, get_object_or_404, redirect
 from django.views import generic, View
-from restaurant.forms import BookingForm
+from restaurant.forms import BookingForm, UserForm, EmailForm
 from .models import Menu, Starter, MainDish, Dessert, Event, Booking, Customer
 from django.contrib.auth.models import User
 from django.contrib import messages
@@ -108,6 +108,40 @@ def delete_booking(request, booking_id):
     messages.warning(request,
                      'Your reservation has been cancelled')
     return redirect('profile')
+
+
+def edit_username(request, user_id):
+    user = get_object_or_404(User, id=user_id)
+    form = UserForm(instance=user)
+    if request.POST:
+        form = UserForm(request.POST, instance=user)
+        if form.is_valid():
+            form.save()
+            messages.success(request,
+                             'Your profile information has been updated')
+        return redirect('profile')
+    user = UserForm(instance=user)
+    context = {
+        'form': form
+    }
+    return render(request, 'edit_username.html', context)
+
+
+def edit_email(request, user_id):
+    user = get_object_or_404(User, id=user_id)
+    form = EmailForm(instance=user)
+    if request.POST:
+        form = EmailForm(request.POST, instance=user)
+        if form.is_valid():
+            form.save()
+            messages.success(request,
+                             'Your email address has been updated')
+        return redirect('profile')
+    user = EmailForm(instance=user)
+    context = {
+        'form': form
+    }
+    return render(request, 'edit_email.html', context)
 
 
 def delete_account(request, user_id):

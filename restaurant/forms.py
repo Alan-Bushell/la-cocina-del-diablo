@@ -28,3 +28,31 @@ class BookingForm(ModelForm):
         model = Booking
         fields = ['first_name', 'last_name', 'email', 'contact_phone',
                   'booking_date', 'booking_time', 'number_of_attendees']
+
+
+class UserForm(ModelForm):
+
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        self.helper = FormHelper(self)
+        self.helper.add_input(Submit('submit', 'Submit'))
+
+    username = forms.CharField(max_length=40)
+
+    class Meta:
+        model = User
+        fields = ['username']
+
+
+class EmailForm(ModelForm):
+
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        self.helper = FormHelper(self)
+        self.helper.add_input(Submit('submit', 'Submit'))
+
+    email = forms.CharField(max_length=40)
+
+    class Meta:
+        model = User
+        fields = ['email']
