@@ -1,6 +1,8 @@
 from django.db import models
 from django.contrib.auth.models import User
 from cloudinary.models import CloudinaryField
+from django.db.models.signals import post_save
+from django.dispatch import receiver
 # Create your models here.
 
 STATUS = ((0, "Not Live"), (1, "Live"))
@@ -28,6 +30,7 @@ class Booking(models.Model):
     booking_time = models.CharField(null=False, blank=False, max_length=5)
     number_of_attendees = models.IntegerField(default=2, blank=False)
     booking_status = models.IntegerField(choices=BOOKING_STATUS, default=0)
+    customer = models.ForeignKey(Customer, null=True, on_delete=models.CASCADE)
 
     def __str__(self):
         return self.first_name + ' ' + self.last_name + "'s" + ' Booking'
@@ -100,3 +103,14 @@ class Dessert(models.Model):
 
     def __str__(self):
         return self.title
+
+
+@receiver(post_save, sender=User)
+def create_user_customer(sender, instance, created, **kwargs):
+    if created:
+        Customer.objects.create(user=instance)
+
+
+@receiver(post_save, sender=User)
+def save_user_customer(sender, instance, **kwargs):
+    instance.customer.save()
