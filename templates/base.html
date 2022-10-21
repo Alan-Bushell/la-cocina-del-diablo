@@ -86,8 +86,111 @@
         <!-- Content Goes here -->
     {% endblock content %}
 
+
+
     <!-- Footer -->
 
+    <div class="container-fluid my-5">
+
+        <footer class="text-black text-center text-lg-start bg-light">
+        <!-- Grid container -->
+        <div class="container p-4">
+          <!--Grid row-->
+          <div class="row mt-4">
+            <!--Grid column-->
+            <div class="col-lg-3 col-md-12 mb-4 mb-md-0">
+              <h5 class="text-uppercase mb-4"><i class="fa-solid fa-champagne-glasses"></i> La Cocina Del Diablo</h5>
+      
+              <p>
+                Welcome to the home of the Morning Star. The best place to dine down, wind down and let yourself go.
+              </p>
+      
+              <p>
+                Join us for drinks, food or even attend one of our fantastic upcoming events.
+              </p>
+      
+              <div class="mt-4 footer-socials">
+                <!-- Facebook -->
+                <a type="button" class="btn btn-floating btn-lg"><i class="fab fa-facebook-f"></i></a>
+                <!-- Dribbble -->
+                <a type="button" class="btn btn-floating btn-lg"><i class="fab fa-dribbble"></i></a>
+                <!-- Twitter -->
+                <a type="button" class="btn btn-floating btn-lg"><i class="fab fa-twitter"></i></a>
+                <!-- Google + -->
+                <a type="button" class="btn btn-floating btn-lg"><i class="fab fa-google-plus-g"></i></a>
+                <!-- Linkedin -->
+              </div>
+            </div>
+            <!--Grid column-->
+      
+            <!--Grid column-->
+            <div class="col-lg-3 col-md-4 mb-4 mb-md-0">
+              <h5 class="text-uppercase mb-4 pb-1">Links</h5>
+      
+      
+              <ul class="fa-ul" style="margin-left: 1.65em;">
+                <li class="nav-item mb-3">
+                    <a class="footer-link" aria-current="page" href="{% url 'home' %}">Home</a>
+                </li>
+                <li class="nav-item mb-3">
+                    <a class="footer-link" aria-current="page" href="{% url 'restaurant' %}">Restaurant</a>
+                </li>
+                <li class="nav-item mb-3">
+                    <a class="footer-link" aria-current="page" href="{% url 'events' %}">Events</a>
+                </li>
+              </ul>
+            </div>
+            <!--Grid column-->
+            <div class="col-lg-3 col-md-4 mb-4 mb-md-0">
+                <h5 class="text-uppercase mb-4 pb-1">Contact</h5>
+                
+        
+                <ul class="fa-ul" style="margin-left: 1.65em;">
+                  <li class="mb-3">
+                    <span class="fa-li"><i class="fas fa-home"></i></span><span class="ms-2">666 Black Cat Ave, Dublin</span>
+                  </li>
+                  <li class="mb-3">
+                    <span class="fa-li"><i class="fas fa-envelope"></i></span><span class="ms-2">himself@thedevilskitchen.com</span>
+                  </li>
+                  <li class="mb-3">
+                    <span class="fa-li"><i class="fas fa-phone"></i></span><span class="ms-2">+ 666 345-666</span>
+                  </li>
+                </ul>
+              </div>
+      
+            <!--Grid column-->
+            <div class="col-lg-3 col-md-4 mb-4 mb-md-0">
+              <h5 class="text-uppercase mb-4">Opening hours</h5>
+      
+              <table class="table text-center text-dark">
+                <tbody class="font-weight-normal">
+                  <tr>
+                    <td>Mon - Thu:</td>
+                    <td>1pm - 12.30am</td>
+                  </tr>
+                  <tr>
+                    <td>Fri - Sat:</td>
+                    <td>12pm - 3am</td>
+                  </tr>
+                  <tr>
+                    <td>Sunday:</td>
+                    <td>2pm - 11.30pm</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+
+        <!-- Copyright -->
+        <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+          © 2022 Copyright: Alan-Bushell
+        </div>
+      </footer>
+    </div>
+    
+  <!-- End of .container -->
+  <!-- Footer -->
 
     <!--On page scripts for messages-->
     <script>
