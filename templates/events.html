@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 
 {% block content %}
-<h3 class="text-center">Events page</h3>
+<h3 class="text-center">Upcoming Events</h3>
 
 <div class="container-fluid">
     <div class="row">
@@ -21,7 +21,7 @@
                                 {% endif %}
                             </div>
                             <a href="{% url 'event_detail' event.slug %}" class="event-link">
-                                <h2 class="card-title">{{ event.title }}</h2>
+                                <h4 class="card-title events-title">{{ event.title }} | {{ event.date }}</h4>
                                 <p class="card-text">{{ event.excerpt }}</p>
                             </a>
                             <hr />
