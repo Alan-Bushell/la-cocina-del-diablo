@@ -1,48 +1,25 @@
 {% extends 'base.html' %} {% block content %}
 
-<div class="masthead">
-    <div class="container">
-        <div class="row g-0">
-            <div class="col-md-6 masthead-text">
-                <!-- Event title goes in these h1 tags -->
-                <h1 class="event-title">
-                    {{ event.title }}
-                </h1>
-                <!-- Event author goes before the | the events's created date goes after -->
-                <p class="event-subtitle"> | </p>
-            </div>
-            <div class="d-none d-md-block col-md-6 masthead-image">
-                <!-- The featured image URL goes in the src attribute -->
-                {% if "placeholder" in event.featured_image.url %}
-                <img src="https://images.pexels.com/photos/1763075/pexels-photo-1763075.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" width="100%">
-                {% else %}
-                <img src="" width="100%">
-                {% endif %}
-            </div>
-        </div>
-    </div>
-</div>
 
-<div class="container">
+<h3 class="text-center">{{ event.title }}</h3>
+<div class="container events-info-container">
     <div class="row">
-        <div class="col card mb-4  mt-3 left  top">
-            <p>{{ event.excerpt }}</p>
-            <p>{{ event.author }}</p>
-            <div class="card-body">
-                <!-- The event content goes inside the card-text. -->
-                {{ event.description | safe }}
-                <!-- Use the | safe filter inside the template tags -->
-                <p class="card-text ">{{ event_excerpt }}</p>
-                <p class="card-test">Tickets available: {{ event.tickets_available }}</p>
-                <h4>Date: {{ event.date }} <br>Time: {{ event.time}}</h4>
-            </div>
+        <div class="d-none d-md-block col-md-6 masthead-image">
+            <!-- The featured image URL goes in the src attribute -->
+            {% if "placeholder" in event.featured_image.url %}
+            <img src="https://images.pexels.com/photos/1763075/pexels-photo-1763075.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" width="100%">
+            {% else %}
+            <img src="{{ event.featured_image.url }}" width="100%">
+            {% endif %}
         </div>
+      <div class=" col-sm-12 col-md-6">
+        <p>{{ event.description | safe }}</strong>
+        </p>
+        <p><h4>Date: {{ event.date }} <br>Time: {{ event.time}}</h4></p>
+        <p class="card-test">Tickets available: {{ event.tickets_available }}</p>
+      </div>
     </div>
-    <div class="row">
-        <div class="col">
-            <hr>
-        </div>
-    </div>
-</div>
+  </div>
+
 
 {% endblock content %}

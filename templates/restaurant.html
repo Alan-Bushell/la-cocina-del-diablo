@@ -1,20 +1,20 @@
 {% extends "base.html" %}
+{% load static %}
 {% load crispy_forms_tags %}
 
 {% block content %}
-
-<h1 class="text-center">Welcome to the Restaurant page</h1>
-
-
-
+<!--Background-->
+<div class="background-image-reservation">
 
 {% if user.is_authenticated %}
-<h3 class="text-center">Booking form</h3>
-<p class="text-center">Please use the below form to make a reservation.</p>
+<h3 class="text-center text-white">Booking form</h3>
+<p class="text-center text-white">Please use the below form to make a reservation with the restaurant.</p>
 {% crispy form %}
 
 {% else %}
-<h3 class="text-center">Please login or sign up to an account to be able to make a booking</h3>
+<h3 class="text-center text-white">Please login or sign up to an account to be able to make a booking</h3>
 {% endif %}
 
+</div>
+<!--End of BG-->
 {%endblock%}
