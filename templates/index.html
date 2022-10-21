@@ -122,41 +122,24 @@
   </div>
  
 
-<!-- <div class="container-fluid">
-    <div class="row">
+  <h3 class="text-center">Events</h3>
 
-        <h5>Starters:</h5>
-    <hr/>
-    <ul>
-        {% for starter in starters %}
-        <li><h5>{{ starter.title }} | {{ starter.price }}</h5>
-            {{ starter.description | safe }}
-        </li>
-        {% endfor %}
-    </ul>
-    <hr>
-    <ul>
-        {% for main in mains %}
-        <li><h5>{{ main.title }} | {{ main.price }}</h5>
-            {{ main.description | safe }}
-        </li>
-        {% endfor %}
-    </ul>
-    <hr>
-    <ul>
-        {% for dessert in desserts %}
-        <li><h5>{{ dessert.title }} | {{ dessert.price }}</h5>
-            {{ dessert.description | safe }}
-        </li>
-        {% endfor %}
-    </ul>
-    <hr>
- 
+<div class="container events-info-container">
+  <div class="row">
+    <div class="col-sm-12 col-md-6 event-image">
+      <img src="{% static 'images/event.jpg' %}">
     </div>
+    <div class=" col-sm-12 col-md-6">
+      <p>Here at La Cocina Del Diablo we love what we do and we think we are pretty good at it. 
+        Rather than just be your traditional restaurant we decided we wanted to embrace our space and make sure it can fit any occasion.<br><br>
+        At least twice a month we have late night or even all day events featuring a variety of bands, dj's and the most vibrant eclectic groups.<br><br>
+        The events are all free entry unless otherwise stated but as space is 
+        a premium and to not let down our loyal customers at the door you will need to register to apply for tickets.<br><br>
+        <strong>Select one of the events below to see more information and to be taken to the booking page to reserve your ticket. </strong>
+      </p>
+    </div>
+  </div>
 </div>
--->
-
-
 
 <!--Pagination-->
     {% if is_paginated %}

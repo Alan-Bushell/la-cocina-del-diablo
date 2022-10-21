@@ -226,4 +226,13 @@ form{
     transition: 0.3s;
   }
 
+.events-info-container{
+    border-top: solid black 1px;
+    border-bottom: solid black 1px;
+}
+
+.event-image>img{
+    max-width: 100%;
+    max-height: 100%;
+}
  
