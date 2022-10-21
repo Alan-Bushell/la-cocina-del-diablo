@@ -17,7 +17,7 @@
     <div class="col">
       <div class="card h-100">
         <img src="{% static 'images/bar.jpg' %}" class="card-img-top"
-          alt="Skyscrapers" />
+          alt="Dark image of the dive style bar" />
         <div class="card-body">
           <h5 class="card-title">Bar</h5>
           <p class="card-text">
@@ -33,7 +33,7 @@
     <div class="col">
       <div class="card h-100">
         <img src="{% static 'images/small-restaurant.jpg' %}" class="card-img-top"
-          alt="Los Angeles Skyscrapers" />
+          alt="Darkly candle lit restaurant" />
         <div class="card-body">
           <h5 class="card-title">Restaurant</h5>
           <p class="card-text">This card has supporting text below as a natural lead-in to additional content.
@@ -47,7 +47,7 @@
     <div class="col">
       <div class="card h-100">
         <img src="{% static 'images/venue2.jpg' %}" class="card-img-top"
-          alt="Palm Springs Road" />
+          alt="Picture of the Venue with a drummer playing the drums" />
         <div class="card-body">
           <h5 class="card-title">Venue</h5>
           <p class="card-text">
@@ -63,6 +63,7 @@
     </div>
   </div>
 </div>
+
 <!--Menu Section-->
 <h3 class="text-center">Menus</h3>
 
@@ -71,58 +72,58 @@
     <button class="tablinks" onclick="openMenu(event, 'a-la-carte')">A la carte</button>
     <button class="tablinks" onclick="openMenu(event, 'set-menu')">Set Menu for 2</button>
     <button class="tablinks" onclick="openMenu(event, 'theatre-menu')">Theatre Menu</button>
-  </div>
+</div>
   
-  <!-- Tab content -->
-  <!--A la carte content-->
-  <div id="a-la-carte" class="tabcontent">
-    <h3 class="text-center">A la carte Menu</h3>
-    <p class="text-center">See below our A la cart menu</p>
-  </div>
+<!-- Tab content -->
+<!--A la carte content-->
+<div id="a-la-carte" class="tabcontent">
+  <h3 class="text-center">A la carte Menu</h3>
+  <p class="text-center">See below our A la cart menu</p>
+</div>
   
-  <!--Set menu Content-->
-  <div id="set-menu" class="tabcontent">
-    <h3 class="text-center">Set Menu for 2</h3>
-    <p class="text-center">Check out our set menu for 2 at a great price.</p>
-    <!--Starters-->
-    <h4 class="text-center">Starters:</h4>
-    <hr class="menu-hr">
-    <ul>
-        {% for starter in starters %}
-        <li class="menu-items"><h5 class="text-center">{{ starter.title }} | {{ starter.price }}</h5>
-            <p class="menu-desc">{{ starter.description | safe }}</p>
-        </li>
-        {% endfor %}
-    </ul>
-        <!--Mains-->
-    <h4 class="text-center">Main Dishes:</h4>
-    <hr class="menu-hr">
-    <ul>
-        {% for main in mains %}
-        <li  class="menu-items"><h5 class="text-center">{{ main.title }} | {{ main.price }}</h5>
-            <p class="menu-desc">{{ main.description | safe }}</p>
-        </li>
-        {% endfor %}
-    </ul>
-        <!--Desserts-->
-    <h4 class="text-center">Desserts:</h4>
-    <hr class="menu-hr">
-    <ul>
-        {% for dessert in desserts %}
-        <li  class="menu-items"><h5 class="text-center">{{ dessert.title }} | {{ dessert.price }}</h5>
-            <p class="menu-desc">{{ dessert.description | safe }}</p>
-        </li>
-        {% endfor %}
-    </ul>
-  </div>
-  
-  <div id="theatre-menu" class="tabcontent">
-    <h3 class="text-center">Theatre Menu</h3>
-    <p class="text-center">Check out our pre-theatre menu. Ideal for those looking to be in and out quickly.</p>
-  </div>
- 
+<!--Set menu Content-->
+<div id="set-menu" class="tabcontent">
+  <h3 class="text-center">Set Menu for 2</h3>
+  <p class="text-center">Check out our set menu for 2 at a great price.</p>
+  <!--Starters-->
+  <h4 class="text-center">Starters:</h4>
+  <hr class="menu-hr">
+  <ul>
+      {% for starter in starters %}
+      <li class="menu-items"><h5 class="text-center">{{ starter.title }} | {{ starter.price }}</h5>
+          <p class="menu-desc">{{ starter.description | safe }}</p>
+      </li>
+      {% endfor %}
+  </ul>
+      <!--Mains-->
+  <h4 class="text-center">Main Dishes:</h4>
+  <hr class="menu-hr">
+  <ul>
+      {% for main in mains %}
+      <li  class="menu-items"><h5 class="text-center">{{ main.title }} | {{ main.price }}</h5>
+          <p class="menu-desc">{{ main.description | safe }}</p>
+      </li>
+      {% endfor %}
+  </ul>
+      <!--Desserts-->
+  <h4 class="text-center">Desserts:</h4>
+  <hr class="menu-hr">
+  <ul>
+      {% for dessert in desserts %}
+      <li  class="menu-items"><h5 class="text-center">{{ dessert.title }} | {{ dessert.price }}</h5>
+          <p class="menu-desc">{{ dessert.description | safe }}</p>
+      </li>
+      {% endfor %}
+  </ul>
+</div>
 
-  <h3 class="text-center">Events</h3>
+<div id="theatre-menu" class="tabcontent">
+  <h3 class="text-center">Theatre Menu</h3>
+  <p class="text-center">Check out our pre-theatre menu. Ideal for those looking to be in and out quickly.</p>
+</div>
+ 
+<!--Events Section-->
+<h3 class="text-center">Events</h3>
 
 <div class="container events-info-container">
   <div class="row">
@@ -135,11 +136,63 @@
         At least twice a month we have late night or even all day events featuring a variety of bands, dj's and the most vibrant eclectic groups.<br><br>
         The events are all free entry unless otherwise stated but as space is 
         a premium and to not let down our loyal customers at the door you will need to register to apply for tickets.<br><br>
-        <strong>Select one of the events below to see more information and to be taken to the booking page to reserve your ticket. </strong>
+        <strong>Select one of the events below to see more information and to be taken to the booking page to reserve your ticket.</strong>
       </p>
     </div>
   </div>
 </div>
+
+<!--Upcoming Events-->
+<h3 class="text-center">Upcoming Events</h3>
+<!--Card Group-->
+<div class="container">
+  <div class="row row-cols-1 row-cols-md-3 g-5">
+      <div class="col">
+        <div class="card h-100">
+          <img src="{% static 'images/dayofdead.jpg' %}" class="card-img-top"
+            alt="Dark image of the dive style bar" />
+          <div class="card-body">
+            <h5 class="card-title">Day of the Dead</h5>
+            <p class="card-text">
+              Party away in traditional latin style. Beads everywhere, Incredible costumes and a party atmosphere like no other.
+            </p>
+          </div>
+          <div class="card-footer">
+            <small class="text-muted">2nd November @ 19:30 till late</small>
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="card h-100">
+          <img src="{% static 'images/devils-night.jpg' %}" class="card-img-top"
+            alt="Darkly candle lit restaurant" />
+          <div class="card-body">
+            <h5 class="card-title">Devils Night</h5>
+            <p class="card-text">Come out and show your tribute to the Morning Star. Welcome blood shots on arrival.
+            </p>
+          </div>
+          <div class="card-footer">
+            <small class="text-muted">30th October @ 19:00 till very late</small>
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="card h-100">
+          <img src="{% static 'images/halloween.jpg' %}" class="card-img-top"
+            alt="Picture of the Venue with a drummer playing the drums" />
+          <div class="card-body">
+            <h5 class="card-title">Halloween Spectacular</h5>
+            <p class="card-text">
+              Our famous Halloween Spectacular evening combines live music and cheap drinks in a dark atmosphere. Dress up is encouraged.
+            </p>
+          </div>
+          <div class="card-footer">
+            <small class="text-muted">31st October @ 18:00 till late</small>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 
 <!--Pagination-->
     {% if is_paginated %}
