@@ -33,7 +33,8 @@ body{
 
 .fa-unlock {
     color: gray;
-    font-size: 24px;
+    font-size: 28px;
+    line-height: normal;
 }
 
 .nav-main-links{
@@ -305,4 +306,10 @@ footer{
 
 .form-group{
     color: black;
+}
+
+.profile-image-nav{
+    width: 30px;
+    height: 30px;
+    border-radius: 50% ;
 }

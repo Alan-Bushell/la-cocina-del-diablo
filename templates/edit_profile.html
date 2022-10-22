@@ -13,7 +13,7 @@
         {% if user.customer.profile_image == False %}
         <img src="https://cdn.pixabay.com/photo/2014/11/14/13/29/evil-530640_960_720.jpg" class="profile-image">
         {% else %}
-        <img src="{{ user.customer.profile_image }}" class="profile-image">
+        <img src="{{ user.customer.profile_image.url }}" class="profile-image">
         {% endif %}
         <h5 class="text-center"><strong>Joined:</strong> {{ user.date_joined }}</h5>
       </div>

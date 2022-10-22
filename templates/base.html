@@ -44,7 +44,12 @@
                 <ul class="navbar-nav">
                     {% if user.is_authenticated %}
                         <li class="nav-item">
-                            <a class="nav-link" href="{% url 'profile' %}"><i class="fa-solid fa-circle-user"></i></a>
+                            <a class="nav-link" href="{% url 'profile' %}">
+                              {% if user.customer.profile_image %}
+                              <img src="{{ user.customer.profile_image.url }}" class="profile-image-nav"></a>
+                              {% else %}
+                              <i class="fa-solid fa-circle-user"></i>
+                              {% endif %}
                         </li>
                             {% if user.is_superuser %}
                             <li class="nav-item">
