@@ -12,14 +12,14 @@ BOOKING_STATUS = ((0, "Awaiting Confirmation"), (1, "Confirm Booking"),
 
 class Customer(models.Model):
     user = models.OneToOneField(User, null=True, on_delete=models.CASCADE)
-    first_name = models.CharField(max_length=40, null=False, blank=False)
-    last_name = models.CharField(max_length=100, null=False, blank=False)
-    email = models.EmailField()
-    contact_phone = models.CharField(max_length=15, null=False, blank=False)
-    profile_image = models.ImageField(null=True, blank=True)
+    first_name = models.CharField(max_length=40, null=True, blank=True)
+    last_name = models.CharField(max_length=100, null=True, blank=True)
+    email = models.EmailField(null=True, blank=True)
+    contact_phone = models.CharField(max_length=15, null=True, blank=True)
+    profile_image = CloudinaryField('image', default='placeholder')
 
     def __str__(self):
-        return self.first_name + ' ' + self.last_name
+        return self.user.username
 
 
 class Booking(models.Model):
@@ -32,6 +32,7 @@ class Booking(models.Model):
     number_of_attendees = models.IntegerField(default=2, blank=False)
     booking_status = models.IntegerField(choices=BOOKING_STATUS, default=0)
     customer = models.ForeignKey(Customer, null=True, on_delete=models.CASCADE)
+    user = models.OneToOneField(User, null=True, on_delete=models.CASCADE)
 
     def __str__(self):
         return self.first_name + ' ' + self.last_name + "'s" + ' Booking'
@@ -113,5 +114,5 @@ def create_user_customer(sender, instance, created, **kwargs):
 
 
 @receiver(post_save, sender=User)
-def save_user_customer(sender, instance, **kwargs):
+def save_user_customer(sender, instance, created, **kwargs):
     instance.customer.save()

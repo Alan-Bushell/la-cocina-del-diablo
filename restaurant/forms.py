@@ -68,8 +68,6 @@ class ImageForm(ModelForm):
         self.helper = FormHelper(self)
         self.helper.add_input(Submit('submit', 'Submit'))
 
-    profile_image = forms.ImageField()
-
     class Meta:
         model = Customer
         fields = ['profile_image']

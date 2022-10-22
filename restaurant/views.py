@@ -125,7 +125,7 @@ def edit_image(request, user_id):
     user = get_object_or_404(User, id=user_id)
     form = ImageForm(instance=user)
     if request.POST:
-        form = ImageForm(request.POST, instance=user)
+        form = ImageForm(request.POST, request.FILES, instance=user)
         if form.is_valid():
             form.save()
             messages.success(request,
