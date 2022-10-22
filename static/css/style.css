@@ -146,7 +146,7 @@ hr{
     margin-bottom: 10px;
 }
 
-form{
+.reservation-form{
     width: 33%;
     display: flex;
     flex-direction: column;
@@ -164,7 +164,7 @@ form{
     margin-top: 15px;
     text-align: center;
     width: 25%;
-    margin-left: 37.5%;
+    margin-bottom: 15px;
 }
 
 /* Style the tab */
@@ -273,7 +273,7 @@ footer{
     background: url("/static/images/reservation.jpg") 50% 0 no-repeat fixed;
     height: 80%;
     min-height: 80%;
-    min-width: 1024px;
+    max-width: 100%;
 	
   /* Set up proportionate scaling */
     width: 100%;
@@ -304,12 +304,29 @@ footer{
     color: blue;
 }
 
-.form-group{
-    color: black;
-}
-
 .profile-image-nav{
     width: 30px;
     height: 30px;
     border-radius: 50% ;
+}
+
+.personal-info-form{
+    max-width: 80%;
+    margin-left: 10%;
+}
+
+.edit-username-form{
+    width: 50%;
+    margin-left: 25%;
+}
+
+.edit-booking-form{
+    display: flex;
+    flex-direction: column;
+    width: 40%;
+    margin-left: 30%;
+}
+
+.edit-profile-form{
+    
 }

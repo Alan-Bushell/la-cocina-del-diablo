@@ -19,7 +19,10 @@
       </div>
         <div class="col-sm-12 col-md-8 personal-information">
             <h3><strong>Personal Information</strong></h3>
+            <form method="POST" class="personal-info-form">
             {% crispy form %}
+            </form>
+            <h5>To cancel any changes then please click <a href="{% url 'profile' %}">here</a></h5>
         </div>
     </div>
 </div>

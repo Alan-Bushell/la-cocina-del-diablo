@@ -10,19 +10,22 @@
     <div class="row">
       <div class="col-sm-12 col-md-4 text-center image-col">
         <h5><strong>{{ user.username}}'s</strong> Profile</h5>
-        <form method ="POST"  enctype="multipart/form-data">
+        <form method ="POST"  enctype="multipart/form-data" class="edit-profile-form">
             {% csrf_token %}
             {% crispy form %}
         </form>
+        <h5>To cancel any changes then please click <a href="{% url 'profile' %}">here</a></h5>
         <h5 class="text-center"><strong>Joined:</strong> 1st March 2022</h5>
       </div>
         <div class="col-sm-12 col-md-8 personal-information">
           <h3><strong>Personal Information</strong></h3>
-            <h5><strong>Username:</strong> {{ user.username }}</h5>  
-            <h5><strong>Account Number:</strong> 100{{ user.id }} {{ user.first_name }}</h5> 
-            <h5><strong>Phone:</strong> {{user.contact_phone}}</h5>
+            <h5><strong>First Name:</strong> {{ user.customer.first_name }} | <strong>Last Name:</strong> {{ user.customer.last_name }}</h5>  
+            <h5><strong>Username:</strong> {{ user.username }} <a href="{% url 'edit_username' user.id %}">Edit</a></h5>  
+            <h5><strong>Account Number:</strong> 100{{ user.id }}</h5> 
+            <h5><strong>Email:</strong> {{ user.email }}</h5>
+            <h5><strong>Phone:</strong> {{user.customer.contact_phone}}</h5>
+            <h5>To make changes to your profile information plese click here:<a href="{% url 'edit_profile' user.id %}"> Edit</a></h5>
             <p>Change your contact preferences for our Newsletter & upcoming events<br> and ticket info here: <input type="checkbox" id="vehicle1" name="vehicle1" value="Bike"></p>
-
         </div>
     </div>
 </div>
