@@ -63,13 +63,6 @@ def profile(request):
                   {'bookings': bookings})
 
 
-def about(request):
-    """
-    renders about page
-    """
-    return render(request, "about.html")
-
-
 def restaurant(request):
     """
     renders restaurant page
