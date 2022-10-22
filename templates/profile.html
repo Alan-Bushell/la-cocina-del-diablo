@@ -10,13 +10,17 @@
     <div class="row">
       <div class="col-sm-12 col-md-4 text-center image-col">
         <h5><strong>{{ user.username}}'s</strong> Profile</h5>
+        <!--Profile image-->
         {% if user.customer.profile_image %}
-        <img src="{{ user.customer.profile_image.url }}" width="150", height="150" class="profile-image">
+        <img src="{{ user.customer.profile_image.url }}"  class="profile-image">
         {% else %}
         <img src="https://cdn.pixabay.com/photo/2014/11/14/13/29/evil-530640_960_720.jpg" class="profile-image">
         {% endif %}
+        <!--Change image button-->
+        <p><a href="{% url 'edit_image' user.id %}">Change profile pic</a></p>
         <h5 class="text-center"><strong>Joined:</strong> {{ user.date_joined }}</h5>
       </div>
+      <!--Personal information-->
         <div class="col-sm-12 col-md-8 personal-information">
             <h3><strong>Personal Information</strong></h3>
             <h5><strong>First Name:</strong> {{ user.customer.first_name }} | <strong>Last Name:</strong> {{ user.customer.last_name }}<a href="{% url 'edit_profile' user.id %}">Edit</a></h5>  
@@ -73,8 +77,11 @@
             <p><strong>Status:</strong></p>
         </div>
     </div>
+
     {% for booking in bookings %}
-        {% if user.email == booking.email %}
+        {% if user.id == booking.customer.user.id %}
+
+        
             <hr>
             <!-- Reservation Block -->
             <div class="row {% if forloop.counter0|divisibleby:2 %} reservation {% else %} alternate-reservation {% endif %}">

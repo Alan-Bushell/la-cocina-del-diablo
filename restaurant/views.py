@@ -1,6 +1,7 @@
 from django.shortcuts import render, get_object_or_404, redirect
 from django.views import generic, View
 from restaurant.forms import BookingForm, UserForm, EmailForm, ProfileForm
+from restaurant.forms import ImageForm
 from .models import Menu, Starter, MainDish, Dessert, Event, Booking, Customer
 from django.contrib.auth.models import User
 from django.contrib import messages
@@ -142,6 +143,23 @@ def edit_email(request, user_id):
         'form': form
     }
     return render(request, 'edit_email.html', context)
+
+
+def edit_image(request, user_id):
+    user = get_object_or_404(User, id=user_id)
+    form = ImageForm(instance=user)
+    if request.POST:
+        form = ImageForm(request.POST, instance=user)
+        if form.is_valid():
+            form.save()
+            messages.success(request,
+                             'Your Photo has been updated')
+        return redirect('profile')
+    user = ImageForm(instance=user)
+    context = {
+        'form': form
+    }
+    return render(request, 'edit_image.html', context)
 
 
 def edit_profile(request, user_id):

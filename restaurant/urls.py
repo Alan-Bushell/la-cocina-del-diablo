@@ -14,6 +14,7 @@ urlpatterns = [
          name='delete_account'),
     path('edit_username/<user_id>', views.edit_username, name='edit_username'),
     path('edit_email/<user_id>', views.edit_email, name='edit_email'),
+    path('edit_image/<user_id>', views.edit_image, name='edit_image'),
     path('edit_profile/<user_id>', views.edit_profile,
          name='edit_profile'),
     path('events/', views.EventList.as_view(), name='events'),

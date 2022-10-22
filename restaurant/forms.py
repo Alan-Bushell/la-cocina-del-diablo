@@ -72,3 +72,17 @@ class ProfileForm(ModelForm):
     class Meta:
         model = Customer
         fields = ['first_name', 'last_name', 'contact_phone']
+
+
+class ImageForm(ModelForm):
+
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        self.helper = FormHelper(self)
+        self.helper.add_input(Submit('submit', 'Submit'))
+
+    profile_image = forms.ImageField()
+
+    class Meta:
+        model = Customer
+        fields = ['profile_image']
