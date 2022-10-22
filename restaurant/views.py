@@ -1,6 +1,6 @@
 from django.shortcuts import render, get_object_or_404, redirect
 from django.views import generic, View
-from restaurant.forms import BookingForm, UserForm, EmailForm
+from restaurant.forms import BookingForm, UserForm, EmailForm, ProfileForm
 from .models import Menu, Starter, MainDish, Dessert, Event, Booking, Customer
 from django.contrib.auth.models import User
 from django.contrib import messages
@@ -142,6 +142,23 @@ def edit_email(request, user_id):
         'form': form
     }
     return render(request, 'edit_email.html', context)
+
+
+def edit_profile(request, user_id):
+    customer = get_object_or_404(Customer, user=user_id)
+    form = ProfileForm(instance=customer)
+    if request.POST:
+        form = ProfileForm(request.POST, instance=customer)
+        if form.is_valid():
+            form.save()
+            messages.success(request,
+                             'Your profile has been updated')
+        return redirect('profile')
+    customer = ProfileForm(instance=customer)
+    context = {
+        'form': form
+    }
+    return render(request, 'edit_profile.html', context)
 
 
 def delete_account(request, user_id):

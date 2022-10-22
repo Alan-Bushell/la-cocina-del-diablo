@@ -56,3 +56,19 @@ class EmailForm(ModelForm):
     class Meta:
         model = User
         fields = ['email']
+
+
+class ProfileForm(ModelForm):
+
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        self.helper = FormHelper(self)
+        self.helper.add_input(Submit('submit', 'Submit'))
+
+    first_name = forms.CharField(max_length=40)
+    last_name = forms.CharField(max_length=100)
+    contact_phone = forms.CharField(max_length=15)
+
+    class Meta:
+        model = Customer
+        fields = ['first_name', 'last_name', 'contact_phone']
