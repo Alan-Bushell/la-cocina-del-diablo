@@ -123,15 +123,19 @@ def edit_username(request, user_id):
 
 def edit_image(request, user_id):
     user = get_object_or_404(User, id=user_id)
-    form = ImageForm(instance=user)
+    customer = get_object_or_404(Customer, user=user)
     if request.POST:
-        form = ImageForm(request.POST, request.FILES, instance=user)
+        form = ImageForm(request.POST, request.FILES)
+        print(request.FILES)
         if form.is_valid():
+            customer.profile_image = request.FILES['profile_image']
+            customer.save()
             form.save()
             messages.success(request,
                              'Your Photo has been updated')
-        return redirect('profile')
-    user = ImageForm(instance=user)
+            return redirect('profile')
+    user = get_object_or_404(User, id=user_id)
+    form = ImageForm(instance=user)
     context = {
         'form': form
     }

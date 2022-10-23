@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 {% load crispy_forms_tags %}
-
+{% load cloudinary %}
 {% block content %}
 
 {% if user.is_authenticated %}
@@ -10,10 +10,13 @@
     <div class="row">
       <div class="col-sm-12 col-md-4 text-center image-col">
         <h5><strong>{{ user.username}}'s</strong> Profile</h5>
-        <form method ="POST"  enctype="multipart/form-data" class="edit-profile-form">
+        <!--Edit image form-->
+        <form method ="POST" enctype="multipart/form-data" class="edit-profile-form">
             {% csrf_token %}
-            {% crispy form %}
+            {{ form }}
+            <input type="submit" value="save">
         </form>
+        <!--End of image form-->
         <h5>To cancel any changes then please click <a href="{% url 'profile' %}">here</a></h5>
         <h5 class="text-center"><strong>Joined:</strong> 1st March 2022</h5>
       </div>
