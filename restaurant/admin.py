@@ -49,7 +49,7 @@ class MenuAdmin(SummernoteModelAdmin):
 @admin.register(Starter)
 class StarterAdmin(SummernoteModelAdmin):
 
-    list_display = ('title', 'description', 'price')
+    list_display = ('title', 'description', 'price', 'menu')
     search_fields = ['title', 'description']
     list_filter = ('title', 'price')
     summernote_fields = ('description')
@@ -58,7 +58,7 @@ class StarterAdmin(SummernoteModelAdmin):
 @admin.register(MainDish)
 class MainDishAdmin(SummernoteModelAdmin):
 
-    list_display = ('title', 'description', 'price')
+    list_display = ('title', 'description', 'price', 'menu')
     search_fields = ['title', 'description']
     list_filter = ('title', 'price')
     summernote_fields = ('description')
@@ -67,7 +67,7 @@ class MainDishAdmin(SummernoteModelAdmin):
 @admin.register(Dessert)
 class DessertAdmin(SummernoteModelAdmin):
 
-    list_display = ('title', 'description', 'price')
+    list_display = ('title', 'description', 'price', 'menu')
     search_fields = ['title', 'description']
     list_filter = ('title', 'price')
     summernote_fields = ('description')

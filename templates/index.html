@@ -83,43 +83,34 @@
   <h4 class="text-center">Starters:</h4>
   <hr class="menu-hr">
   <ul>
-    {% for menu in menus %}
-      {% if "Theatre" in menu.name %}
-        {% for starter in starters %}
-        <li class="menu-items"><h5 class="text-center">{{ starter.title }} | {{ starter.price }}</h5>
+      {% for starter in starters %}
+          <li class="menu-items">
+            <h5 class="text-center">{{ starter.title }} | {{ starter.price }}</h5>
             <p class="menu-desc">{{ starter.description | safe }}</p>
-        </li>
-        {% endfor %}
-      {% endif %}
-    {% endfor%}
+          </li>
+      {% endfor %}
   </ul>
       <!--Mains-->
   <h4 class="text-center">Main Dishes:</h4>
   <hr class="menu-hr">
   <ul>
-    {% for menu in menus %}
-      {% if "Theatre" in menu.name %}
-        {% for main in mains %}
-        <li  class="menu-items"><h5 class="text-center">{{ main.title }} | {{ main.price }}</h5>
-            <p class="menu-desc">{{ main.description | safe }}</p>
-        </li>
-        {% endfor %}
-      {% endif %}
-    {% endfor %}
+      {% for main in mains %}
+          <li  class="menu-items">
+              <h5 class="text-center">{{ main.title }} | {{ main.price }}</h5>
+              <p class="menu-desc">{{ main.description | safe }}</p>
+          </li>
+      {% endfor %}
   </ul>
       <!--Desserts-->
   <h4 class="text-center">Desserts:</h4>
   <hr class="menu-hr">
   <ul>
-    {% for menu in menus %}
-      {% if "Theatre" in menu.name %}
-        {% for dessert in desserts %}
-        <li  class="menu-items"><h5 class="text-center">{{ dessert.title }} | {{ dessert.price }}</h5>
-            <p class="menu-desc">{{ dessert.description | safe }}</p>
-        </li>
-        {% endfor %}
-      {% endif %}
-    {% endfor %}
+      {% for dessert in desserts %}
+          <li  class="menu-items">
+              <h5 class="text-center">{{ dessert.title }} | {{ dessert.price }}</h5>
+              <p class="menu-desc">{{ dessert.description | safe }}</p>
+          </li>
+      {% endfor %}
   </ul>
 </div>
   
@@ -131,46 +122,40 @@
   <h4 class="text-center">Starters:</h4>
   <hr class="menu-hr">
   <ul>
-    {% for menu in menus %}
-      {% if "Set" in menu.name %}
-        {% for starter in starters %}
-        <li class="menu-items">
-          <h5 class="text-center">{{ starter.title }} | {{ starter.price }}</h5>
-          <p class="menu-desc">{{ starter.description | safe }}</p>
-        </li>
-        {% endfor %}
-      {% endif %}
-    {% endfor%}
+      {% for starter in starters %}
+        {% if starter.menu.name == 'Set menu for 2' %}
+          <li class="menu-items">
+            <h5 class="text-center">{{ starter.title }} | {{ starter.price }}</h5>
+            <p class="menu-desc">{{ starter.description | safe }}</p>
+          </li>
+        {% endif %}
+      {% endfor %}
   </ul>
       <!--Mains-->
   <h4 class="text-center">Main Dishes:</h4>
   <hr class="menu-hr">
   <ul>
-    {% for menu in menus %}
-      {% if "Set" in menu.name %}
-        {% for main in mains %}
-        <li  class="menu-items">
-          <h5 class="text-center">{{ main.title }} | {{ main.price }}</h5>
-          <p class="menu-desc">{{ main.description | safe }}</p>
-        </li>
-        {% endfor %}
-      {% endif %}
-    {% endfor %}
+      {% for main in mains %}
+        {% if main.menu.name == 'Set menu for 2' %}
+          <li  class="menu-items">
+              <h5 class="text-center">{{ main.title }} | {{ main.price }}</h5>
+              <p class="menu-desc">{{ main.description | safe }}</p>
+          </li>
+        {% endif %}
+      {% endfor %}
   </ul>
       <!--Desserts-->
   <h4 class="text-center">Desserts:</h4>
   <hr class="menu-hr">
   <ul>
-    {% for menu in menus %}
-      {% if "Set" in menu.name %}
-        {% for dessert in desserts %}
-        <li  class="menu-items">
-          <h5 class="text-center">{{ dessert.title }} | {{ dessert.price }}</h5>
-          <p class="menu-desc">{{ dessert.description | safe }}</p>
-        </li>
-        {% endfor %}
-      {% endif %}
-    {% endfor %}
+      {% for dessert in desserts %}
+        {% if dessert.menu.name == 'Set menu for 2' %}
+          <li  class="menu-items">
+              <h5 class="text-center">{{ dessert.title }} | {{ dessert.price }}</h5>
+              <p class="menu-desc">{{ dessert.description | safe }}</p>
+          </li>
+        {% endif %}
+      {% endfor %}
   </ul>
 </div>
 
@@ -181,27 +166,25 @@
   <h4 class="text-center">Starters:</h4>
   <hr class="menu-hr">
   <ul>
-    {% for menu in menus %}
-      {% if "Theatre" in menu.name %}
-        {% for starter in starters %}
-        <li class="menu-items"><h5 class="text-center">{{ starter.title }} | {{ starter.price }}</h5>
+      {% for starter in starters %}
+        {% if starter.menu.name == 'Theatre Menu' %}
+          <li class="menu-items">
+            <h5 class="text-center">{{ starter.title }} | {{ starter.price }}</h5>
             <p class="menu-desc">{{ starter.description | safe }}</p>
-        </li>
-        {% endfor %}
-      {% endif %}
-    {% endfor%}
+          </li>
+          {% endif %}
+      {% endfor %}
   </ul>
       <!--Mains-->
   <h4 class="text-center">Main Dishes:</h4>
   <hr class="menu-hr">
   <ul>
-    {% for menu in menus %}
-      {% if "Theatre" in menu.name %}
-        {% for main in mains %}
-        <li  class="menu-items"><h5 class="text-center">{{ main.title }} | {{ main.price }}</h5>
-            <p class="menu-desc">{{ main.description | safe }}</p>
-        </li>
-        {% endfor %}
+    {% for main in mains %}
+        {% if main.menu.name == 'Theatre Menu' %}
+          <li  class="menu-items">
+              <h5 class="text-center">{{ main.title }} | {{ main.price }}</h5>
+              <p class="menu-desc">{{ main.description | safe }}</p>
+          </li>
       {% endif %}
     {% endfor %}
   </ul>
@@ -209,15 +192,14 @@
   <h4 class="text-center">Desserts:</h4>
   <hr class="menu-hr">
   <ul>
-    {% for menu in menus %}
-      {% if "Theatre" in menu.name %}
-        {% for dessert in desserts %}
-        <li  class="menu-items"><h5 class="text-center">{{ dessert.title }} | {{ dessert.price }}</h5>
-            <p class="menu-desc">{{ dessert.description | safe }}</p>
-        </li>
-        {% endfor %}
-      {% endif %}
-    {% endfor %}
+      {% for dessert in desserts %}
+        {% if dessert.menu.name == 'Theatre Menu' %}
+          <li  class="menu-items">
+              <h5 class="text-center">{{ dessert.title }} | {{ dessert.price }}</h5>
+              <p class="menu-desc">{{ dessert.description | safe }}</p>
+          </li>
+        {% endif %}
+      {% endfor %}
   </ul>
 </div>
  
