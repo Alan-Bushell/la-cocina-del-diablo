@@ -33,7 +33,6 @@ class Booking(models.Model):
     number_of_attendees = models.IntegerField(default=2, blank=False)
     booking_status = models.IntegerField(choices=BOOKING_STATUS, default=0)
     customer = models.ForeignKey(Customer, null=True, on_delete=models.CASCADE)
-    user = models.ForeignKey(User, null=True, on_delete=models.CASCADE)
 
     def __str__(self):
         return self.first_name + ' ' + self.last_name + "'s" + ' Booking'
@@ -117,15 +116,3 @@ def create_user_customer(sender, instance, created, **kwargs):
 @receiver(post_save, sender=User)
 def save_user_customer(sender, instance, created, **kwargs):
     instance.customer.save()
-
-
-"""
-@receiver(pre_save, sender=Booking)
-def save_booking_customer(sender, instance, **kwargs):
-    customer = get_object_or_404(Customer)
-    booking.customer = customer
-    instance.booking.save()
-
-
-pre_save.connect(save_booking_customer, sender=Booking)
-"""

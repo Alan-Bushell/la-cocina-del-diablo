@@ -70,7 +70,10 @@ def restaurant(request):
     if request.POST:
         form = BookingForm(request.POST)
         if form.is_valid():
-            form.save()
+            instance = form.save(commit=False)
+            instance.customer = Customer.objects.get(user=request.user)
+            instance.save()
+
         messages.success(request,
                          'Your reservation request has been sent')
         return redirect('profile')

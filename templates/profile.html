@@ -80,9 +80,7 @@
     </div>
 
     {% for booking in bookings %}
-        {% if user.id == booking.customer.user.id %}
-
-        
+        {% if user.customer.id == booking.customer.id %}
             <hr>
             <!-- Reservation Block -->
             <div class="row {% if forloop.counter0|divisibleby:2 %} reservation {% else %} alternate-reservation {% endif %}">
