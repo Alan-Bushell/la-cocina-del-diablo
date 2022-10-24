@@ -26,7 +26,7 @@
             <h5><strong>First Name:</strong> {{ user.customer.first_name }} | <strong>Last Name:</strong> {{ user.customer.last_name }}</h5>  
             <h5><strong>Username:</strong> {{ user.username }} <a href="{% url 'edit_username' user.id %}">Edit</a></h5>  
             <h5><strong>Account Number:</strong> 100{{ user.id }}</h5> 
-            <h5><strong>Email:</strong> {{ user.email }}</h5>
+            <h5><strong>Email:</strong> {{ user.customer.email }}</h5>
             <h5><strong>Phone:</strong> {{user.customer.contact_phone}}</h5>
             <h5>To make changes to your profile information plese click here:<a href="{% url 'edit_profile' user.id %}"> Edit</a></h5>
             <p>Change your contact preferences for our Newsletter & upcoming events<br> and ticket info here: <input type="checkbox" id="vehicle1" name="vehicle1" value="Bike"></p>
