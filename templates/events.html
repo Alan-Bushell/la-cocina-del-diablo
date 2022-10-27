@@ -20,7 +20,7 @@
                                 <img class="card-img-top" src=" {{ event.featured_image.url }}">
                                 {% endif %}
                             </div>
-                            <a href="{% url 'event_detail' event.slug %}" class="event-link">
+                            <a href="{% url 'event_detail' event.slug %}" class="event-link" alt="Picture of our upcoming event">
                                 <h4 class="card-title events-title">{{ event.title }} | {{ event.date }}</h4>
                                 <p class="card-text">{{ event.excerpt }}</p>
                             </a>

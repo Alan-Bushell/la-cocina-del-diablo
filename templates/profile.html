@@ -12,9 +12,9 @@
         <h5><strong>{{ user.username}}'s</strong> Profile</h5>
         <!--Profile image-->
         {% if "placeholder" in user.customer.profile_image %}
-            <img src="https://cdn.pixabay.com/photo/2014/11/14/13/29/evil-530640_960_720.jpg" class="profile-image">
+            <img src="https://cdn.pixabay.com/photo/2014/11/14/13/29/evil-530640_960_720.jpg" alt="profile picture" class="profile-image">
         {% else %}
-            <img src="{{ user.customer.profile_image.url }}"  class="profile-image">
+            <img src="{{ user.customer.profile_image.url }}" alt="profile picture"  class="profile-image">
         {% endif %}
         <!--Change image button-->
         <p><a href="{% url 'edit_image' user.id %}" aria-label="change image">Change profile pic</a></p>

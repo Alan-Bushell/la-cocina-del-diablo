@@ -297,10 +297,6 @@ footer{
     width: 100%;
     height: auto;
 	
-  /* Set up positioning */
-    position: absolut;
-    top: 0;
-    left: 0;
 }
 
 .events-info-container{
