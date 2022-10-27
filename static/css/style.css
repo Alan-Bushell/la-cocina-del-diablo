@@ -341,6 +341,10 @@ footer{
     margin-left: 30%;
 }
 
+ul.fa-ul{
+    margin-left: 0;
+}
+
 /* Media Queries */
 
 @media only screen and (max-width: 425px){
@@ -435,11 +439,15 @@ footer{
 
 }
 
-@media only screen and (max-width: 600px){
+@media only screen and (max-width: 576px){
 	/*Big smartphones [426px -> 600px]*/
 
     .image-container{
         max-width: 100%;
+    }
+
+    .mobile-hidden{
+        display: none;
     }
 
     .first-image{
@@ -458,4 +466,123 @@ footer{
     ul.fa-ul{
         margin-left: 0;
     }
+
+    .navbar-nav{
+        flex-direction: column;
+    }
+
+    .reservation-form{
+        width: 80%;
+        margin-left: 10%;
+    }
+
+    .edit-button{
+        display: block;
+    }
+
+    .edit-profile-link{
+        width: 80%;
+        margin-left: 10%;
+        margin-bottom: 20px;
+    }
 }
+
+/* Medium Devices */
+@media (max-width: 768px) {
+
+    .booking-p{
+        width: 80%;
+        margin-left: 10%;
+    }
+
+    .fa-ul{
+        margin: 0;
+    }
+
+    .footer-socials{
+        margin-bottom: 20px;
+    }
+
+    .first-image{
+        width: 90%;
+    }
+
+    .copyright{
+        max-width: 100%;
+    }
+
+    .reservation-form{
+        width: 80%;
+        margin-left: 10%;
+    }
+
+    .navbar-nav{
+        flex-direction: column;
+    }
+
+    .edit-button{
+        display: block;
+    }
+
+    .btn-primary{
+        width: 60%;
+    }
+
+    footer{
+        width: 100%;
+        position: absolute;
+        bottom: 0;
+        display: contents;
+    }
+
+    ul{
+        margin: 0;
+    }
+
+    .image-col{
+        border-right: none;
+    }
+
+}
+
+/* Landscape tablets and large phones */
+@media only screen and (min-width: 768px) {
+
+    .navbar-nav{
+        flex-direction: column;
+    }
+
+    .reservation-form{
+        width: 60%;
+        margin-left: 20%;
+    }
+
+    .edit-button{
+        font-weight: 700;
+        display: block;
+    }
+
+    .booking-p{
+        width: 70%;
+        margin-left: 15%;
+    }
+
+    .btn-primary{
+        width: 50%;
+    }
+}
+
+/* Extra large screens */
+
+@media only screen and (min-width: 1200px) {
+
+    .booking-p{
+        width: 50%;
+        margin-left: 25%;
+    }
+
+    .reservation-form{
+        width: 50%;
+        margin-left: 25%;
+    }
+} 

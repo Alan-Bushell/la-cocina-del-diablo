@@ -28,7 +28,7 @@
             <h5><strong>Account Number:</strong> 100{{ user.id }}</h5> 
             <h5><strong>Email:</strong> {{ user.customer.email }}</h5>
             <h5><strong>Phone:</strong> {{user.customer.contact_phone}}</h5>
-            <h5>To make changes to your profile information plese click here:<a href="{% url 'edit_profile' user.id %}"> Edit</a></h5>
+            <h5 class="text-center edit-profile-link">To make changes to your profile information plese click here: <a href="{% url 'edit_profile' user.id %}">Edit</a></h5>
 
               <!-- Close account modal -->
             <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#closeAccountModal">
@@ -67,7 +67,7 @@
         </div>
     </div>
     <div class="row mobile-hidden">
-        <div class="col-sm-6">
+        <div class="col-sm-6 text-center">
             <p><strong>Title:</strong></p>
         </div>
         <div class="col-sm-3 text-center">
