@@ -61,9 +61,9 @@ body{
 }
 
 .profile-image{
-    height: 250px;
-    width: 250px;
-    border-radius: 50%;
+    height: 100%;
+    width: 100%;
+    border-radius: 20px;
     border: solid black 2px;
 }
 
@@ -339,4 +339,51 @@ footer{
     flex-direction: column;
     width: 40%;
     margin-left: 30%;
+}
+
+
+@media only screen and (max-width: 425px){
+	/*Small smartphones [325px -> 425px]*/
+    .mobile-hidden{
+        display: none;
+    }
+
+    ul.fa-ul{
+        margin-left: 0;
+    }
+
+    .details-col{
+        text-align: center;
+    }
+
+    .image-col{
+        border-right: none;
+    }
+
+    .heading-space{
+        margin: 20px 0;
+        text-decoration: underline;
+    }
+
+    .btn-primary{
+        width: 60%;
+    }
+
+    .cancel-changes{
+        width: 80%;
+        margin-left: 10%;
+    }
+
+    ul{
+        padding: 0;
+    }
+
+    .booking-p{
+        width: 95%;
+        margin-left: 2.5%;
+    }
+
+    .centered-text{
+        top: 50%;
+    }
 }
