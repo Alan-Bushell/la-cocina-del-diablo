@@ -54,8 +54,17 @@
 
 ## Wireframes
 
-### Desktop & Mobile Wireframe
-![Wireframe]()
+###  Wireframes
+
+> index.html
+
+
+![Desktop Navigation](static/images/readme_images/wireframe-index-page.png)
+
+> profile.html
+
+
+![Desktop Navigation](static/images/readme_images/wireframe-profile-page.png)
 
 
 
