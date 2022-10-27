@@ -1,6 +1,6 @@
 # La Cocina Del Diablo
 
-![am I responsive screenshot](assets/images/readme/geo-masters-responsive.png)
+![am I responsive screenshot](static/images/readme_images/amiresponsive.png)
 
 ## A restaurant website.
 > A themed restaurant website showcasing the venue, menu, events. The site also allows customers to created profiles and submit reservation requests to the restaurant.
@@ -46,6 +46,7 @@
 ##### Images
 
 
+
 ## User Stories
 
 ### User
@@ -63,7 +64,71 @@
 <a name="features"></a>
 ### index.html
 
-#### End Game Function
+#### Desktop
+
+> Desktop Navigation
+
+![Desktop Navigation](static/images/readme_images/desktopnavigation.png)
+
+> Venue Cards
+
+
+![Venue Cards](static/images/readme_images/venuecards.png)
+
+> Menu collapsed
+
+
+![Menu Collapsed](static/images/readme_images/menuscollapsed.png)
+
+> Menu Expanded
+
+
+![Menu Expanded](static/images/readme_images/menuexpanded.png)
+
+> Upcoming Events
+
+
+![Upcoming Events](static/images/readme_images/upcomingeventscards.png)
+
+> Restaurant Booking Details
+
+
+![Restaurant booking details](static/images/readme_images/bookingnotice.png)
+
+> Footer
+
+
+![Footer](static/images/readme_images/footer.png)
+
+> Reservation form
+
+
+![Reservation form](static/images/readme_images/bookingform.png)
+
+> Mobile Navigation
+
+
+![Mobile Navigation](static/images/readme_images/mobilenavigation.png)
+
+
+#### Profile
+
+> User profile
+
+
+![User Profile](static/images/readme_images/userprofileinfo.png)
+
+> User bookings section
+
+
+![User Bookings](static/images/readme_images/profilebookingssection.png)
+
+> User profile on mobile
+
+
+![User Mobile](static/images/readme_images/mobileuserprofile.png)
+
+
 
 
 
@@ -112,20 +177,31 @@
 ## Google Lighthouse Testing
 
 ### Desktop
-![Lighthouse testing index.html]()
 
-### Mobile
-![Lighthouse testing index.html]()
+> index.html
+
+
+![Google Lighthouse Index](static/images/readme_images/lighthouseIndex.png)
+
+> profile.html
+
+
+![Google Lighthouse Profile](static/images/readme_images/lighthouseProfiles.png)
+
 
 ## HTML W3 Validation
 
 ### index.html
-![W3 Validation index.html]()
-#### Result: 
+
+
+![W3 Validation checker](static/images/readme_images/w3validationerrorshtml.png)
+#### Result: Errors
 
 ### CSS Validation
-![W3 Validation index.html]()
-#### Result: 
+
+
+![w3 Jigsaw CSS checker](static/images/readme_images/cssvalidation.png)
+#### Result: Pass - No Errors
 
 <a name="bugs"></a>
 ## **Bugs**
