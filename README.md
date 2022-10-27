@@ -18,15 +18,16 @@
 ## Table of contents
 
  1. [ UX ](#ux)
- 2. [ Features ](#features)  
- 3. [ Features Left to Implement ](#left)  
- 4. [ Technology used ](#tech) 
- 5. [ Testing ](#testing)  
- 6. [ Bugs ](#bugs)  
- 7. [ Deployment](#deployment)
- 8. [ Credits](#credits)
- 9. [ Content](#content)  
- 10. [ Acknowledgements](#acknowledgements)  
+ 2. [Agile Development](#agile)
+ 3. [ Features ](#features)  
+ 4. [ Features Left to Implement ](#left)  
+ 5. [ Technology used ](#tech) 
+ 6. [ Testing ](#testing)  
+ 7. [ Bugs ](#bugs)  
+ 8. [ Deployment](#deployment)
+ 9. [ Credits](#credits)
+ 10. [ Content](#content)  
+ 11. [ Acknowledgements](#acknowledgements)  
 
 
 ## UX
@@ -37,19 +38,26 @@
 
 # UX design
 
-##### Color
+## Overview
 
+La Cocina Del diablo is a Fictional restaurant I decided to come up with and design a website for.  
+The main goal of the website is to allow users to view some photos of the venue, see what they have to offer and if it is to their liking then the user can create an account and use it to make reservation requests.
 
-##### Font
+### Design
+Once the name was chosen I decided that I wanted this website to be modern, minimalistic in it's appearance to to use base colors of Black and White where possible.
+I only deviate from this where it helps user experience in regards to buttons, links or feedback from the booking feature.
 
+### Site User
 
-##### Images
+ - Someone within the same city as the restaurant looking for new places to visit
+ - Someone looking to attend themed events and gigs
+ - Someone who would prefer to make bookings digitally rather than speaking with others
 
+###  Goals for the website
 
-
-## User Stories
-
-### User
+ - To allow customers to see their menus ahead of time
+ - To allow customers to make bookings through the website and store them in a neat place for staff to accept / decline in an easy manner depending on occupancy
+ - To showcase upcoming events to their customer base to ensure they have good attendance for the events.
 
 
 ## Wireframes
@@ -67,10 +75,108 @@
 ![Desktop Navigation](static/images/readme_images/wireframe-profile-page.png)
 
 
+## Agile Development
+
+<a name="agile"></a>
+
+### Agile Overview
+
+This project was started alongside a GitHub Projects Page to track and manage the expected workload ahead.
+The aim was to set out my expected workload, list the epics and then break them down into user stories or bite sized tasks to work towards and ultimately finish the site in good time.
+
+To see Kanban please click [here](https://github.com/users/Alan-Bushell/projects/7).
+
+At the initial stages I decided on 9 core requirements for the project and 3 Nice to haves but not important. (**NINTH**).
+
+From these I added the user stories, acceptance criteria and the tasks so I can track my work effectively.
+
+Once I completed a task I would tick the appropriate box and if all parts of this story were completed I would move it from **in progress** to **completed**.
+
+At the end of a coding session I would update the user stories with a comment of:
+
+ - What was done
+ - What is left to be done
+ - Reminders for myself to track where I finished so when I returned the following day I knew where I left off.
+
+#### User stories
+
+#####  Completed User Stories
+
+To view any of the expanded details of the user stories please click on a user story below to be taken to the Kanban project.
+If the specific user story does not auto pop up then please click on it from the project page and you will see the details and comments.
+
+ 1. [USER STORY: Deploy Website](https://github.com/Alan-Bushell/la-cocina-del-diablo/issues/1)
+ 2. [USER STORY: Admin Panel#2](https://github.com/Alan-Bushell/la-cocina-del-diablo/issues/2)
+ 3. [USER STORY: Create an account (CRUD)#3](https://github.com/Alan-Bushell/la-cocina-del-diablo/issues/3)
+ 4. [USER STORY: Base Template#4](https://github.com/Alan-Bushell/la-cocina-del-diablo/issues/4)
+ 5. [USER STORY: Make a Reservation#5](https://github.com/Alan-Bushell/la-cocina-del-diablo/issues/5)
+ 6. [USER STORY: Add or Edit Menu Items#7](https://github.com/Alan-Bushell/la-cocina-del-diablo/issues/7)
+ 7. [USER STORY: Edit Profile (CRUD)#8](https://github.com/Alan-Bushell/la-cocina-del-diablo/issues/8)
+ 8. [USER STORY: Delete Profile (CRUD)#9](https://github.com/Alan-Bushell/la-cocina-del-diablo/issues/9)
+ 9. [USER STORY: Testing#10](https://github.com/Alan-Bushell/la-cocina-del-diablo/issues/10)
+
+The following User stories were not completed as they were deemed to be not necessary for this project at this time but are indications of possible future features:
+
+ ##### NINTH User stories
+ 
+ 1. [USER STORY: Events#6](https://github.com/Alan-Bushell/la-cocina-del-diablo/issues/6)
+ 2. [USER STORY: Social Sharing#11](https://github.com/Alan-Bushell/la-cocina-del-diablo/issues/11)
+ 3. [USER STORY: Social Feed#12](https://github.com/Alan-Bushell/la-cocina-del-diablo/issues/12)
+
+While USER STORY: Events#6 has some parts completed in terms of displaying upcoming events for the business, I decided against implementing a ticketing system at this time due to upcoming submission deadlines and because the core requirements of the project have been satisfied elsewhere.
+
 
 ## Features
 
 <a name="features"></a>
+
+#### User based Features Implemented:
+
+ - **Users can** create an account (**Create**)
+ - **Users can** log into their account
+ - **Users can** log out of their account
+ - **Users can** make a booking through the reservation form **(Create)**
+ - **Users can** access their profile page & view their information and/or bookings **(Read)**
+ - **Users can** add their name, contact number and e-mail to their profile (**Create**)
+ - **Users can** view their bookings from their profile page (**Read**)
+ - **Users can** edit their username or any other information they have on their profile (**Update**)
+ - **Users can** add their image or update an image if it is already set on their profile(**Update**)
+ - **Users can** edit their booking if it has not yet been accepted or declined (**Update**)
+ - **Users can** delete bookings at any stage of the process from their profile page (**Delete**)
+ - **Users can** delete their account from the profile page by clicking on delete account (**Delete**)
+
+#### Account restrictions:
+ - **Users cannot** access the profile section of an account without being logged in
+ - **Users cannot** access the reservation form until they sign up or login
+ - **Users cannot** edit a reservation once it has been accepted or declined
+ - **Users cannot** edit their account number as this is their UserID and a primary key
+ - **Users cannot** see other users bookings
+ - **Users cannot** access the admin panel of the website unless they have admin status
+
+#### Website features:
+
+##### Dynamic Menu listings
+
+ - The website displays dynamic menus that are updated on the back end and shown on the front-end depending on which menu the user select.
+ - If the menu is updated by the business owner then this change will reflect on the front end.
+ - Additionally if the site owner wants to add extra items to the menus they will also display for customers.
+ - This allows the business owner to make easy changes, change pricing, dishes, or even descriptions easily
+
+##### Events
+
+ - The site has an events link that highlights upcoming events being held at the venue.
+ - It shows users a list and if they select an event they are brought on to a page to show them the details of that event.
+ - The site owner can make changes to existing events, or add new ones as they come up to display on the front end for users.
+
+##### Booking System
+
+ - Once a user has created an account they can make reservation requests with the business
+ - The site user only has to check the bookings field at the start of each day and decide if they have space to accommodate the bookings. 
+ - If they have space they can accept the booking and this will display in the customer / users profile.
+ - If they do not have space the site owner can decline the booking and the user / customer would be notified that the reservation has been declined.
+
+
+
 ### index.html
 
 #### Desktop
