@@ -341,6 +341,7 @@ footer{
     margin-left: 30%;
 }
 
+/* Media Queries */
 
 @media only screen and (max-width: 425px){
 	/*Small smartphones [325px -> 425px]*/
@@ -372,6 +373,12 @@ footer{
     .cancel-changes{
         width: 80%;
         margin-left: 10%;
+        margin-bottom: 20px;
+    }
+
+    .cancel-booking-changes{
+        width: 80%;
+        margin-bottom: 20px;
     }
 
     ul{
@@ -385,5 +392,70 @@ footer{
 
     .centered-text{
         top: 50%;
+    }
+
+    .first-image{
+        width: 90%;
+    }
+
+    .navbar-nav{
+        flex-direction: column;
+    }
+
+    .copyright{
+        max-width: 100%;
+    }
+
+    .reservation-form{
+        width: 95%;
+        margin-left: 2.5%;
+        height: 100%;
+        z-index: 1;
+        padding: 5px;
+        height: auto;
+    }
+
+    .background-image-reservation{
+        min-height: fit-content;
+        padding-bottom: 20px;
+    }
+
+    .edit-profile-form{
+        margin: 30px 0;
+    }
+
+    .edit-booking-form{
+        width: 95%;
+        margin-left: 2.5%;
+    }
+
+    .personal-information{
+        margin-bottom: 10px;
+    }
+
+}
+
+@media only screen and (max-width: 600px){
+	/*Big smartphones [426px -> 600px]*/
+
+    .image-container{
+        max-width: 100%;
+    }
+
+    .first-image{
+        width: 90%;
+    }
+
+    .event-image>img{
+        margin-bottom: 15px;
+    }
+
+    .booking-p{
+        width: 80%;
+        margin-left: 10%;
+    }
+
+    ul.fa-ul{
+        margin-left: 0;
     }
 }

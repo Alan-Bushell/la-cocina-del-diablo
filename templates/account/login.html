@@ -7,7 +7,7 @@
 
 {% block content %}
 
-<h1>{% trans "Sign In" %}</h1>
+<h1 class="text-center">{% trans "Sign In" %}</h1>
 
 {% get_providers as socialaccount_providers %}
 
@@ -33,7 +33,7 @@ for a {{ site_name }} account and sign in below:{% endblocktrans %}</p>
 <a href="{{ signup_url }}">sign up</a> first.{% endblocktrans %}</p>
 {% endif %}
 
-<form class="login" method="POST" action="{% url 'account_login' %}">
+<form class="login" method="POST" action="{% url 'account_login' %}" class="text-center">
   {% csrf_token %}
   {{ form.as_p }}
   {% if redirect_field_value %}
