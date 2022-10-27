@@ -262,6 +262,10 @@ hr{
  
 footer{
     margin-top: 40px;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    display: contents;
 }
 
 .footer-container{
@@ -585,4 +589,5 @@ ul.fa-ul{
         width: 50%;
         margin-left: 25%;
     }
+
 } 
