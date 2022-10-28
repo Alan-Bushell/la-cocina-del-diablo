@@ -45,6 +45,102 @@
 - As of now when the project is finished the only model not implemented is the tickets model. 
 - As explained below I have decided to ommit this feature until a further release / iteration.
 
+
+### Database Schema
+#### Customer Model
+
+| id | Field |
+|--|--|
+| User |OneToOneField  |
+| first_name |Charfield|
+|last_name|Charfield|
+|email|EmailField|
+|contact_phone|Charfield|
+|profile_image|CloudinaryField|
+
+---
+
+#### Booking Model
+
+| id | Field |
+|--|--|
+| first_name |Charfield|
+|last_name|Charfield|
+|email|EmailField|
+|contact_phone|Charfield|
+|booking_date|DateField|
+|booking_time|Charfield|
+|number_of_attendees|Integerfield|
+|booking_status|IntegerField|
+|customer|FK|
+
+---
+
+#### Event Model
+
+| id | Field |
+|--|--|
+| title |CharField|
+|slug|SlugField|
+|date|DateField|
+|time|TimeField|
+|tickets_available|IntegerField|
+|featured_image|CloudinaryField|
+|description|TextField|
+|excerpt|TextField|
+|event_added|DateTimeField|
+|author|FK|
+|status|IntegerField|
+
+---
+
+#### Menu Model
+
+| id | Field |
+|--|--|
+| name |CharField|
+|slug|SlugField|
+|image|CloudinaryField|
+|description|TextField|
+|set_menu|BooleanField|
+|price|IntegerField|
+|status|IntegerField|
+|event_added|DateTimeField|
+
+---
+
+#### Starter Model
+
+| id | Field |
+|--|--|
+| title |CharField|
+|description|TextField|
+|price|Integerfield|
+|menu|FK|
+
+---
+
+#### MainDish Model
+
+| id | Field |
+|--|--|
+| title |CharField|
+|description|TextField|
+|price|Integerfield|
+|menu|FK|
+
+---
+
+#### Desserts Model
+
+| id | Field |
+|--|--|
+| title |CharField|
+|description|TextField|
+|price|Integerfield|
+|menu|FK|
+
+
 # UX design
 
 ## Overview
@@ -656,6 +752,8 @@ Creating a clone enables you to make a copy of the repository at that point in t
 ##### Code Institute
   - Course content for portfolio project 4 helped greatly in being able to complete this project.
   - I found the walkthroughs informative and well paced.
+  - Initial structure based heavily on the CI walkthrough until I got more comfortable with the framework and started to make it my own.
+  - Some legacy code regarding nav remains.
 
 [Back to Top of page](#contents)
 
