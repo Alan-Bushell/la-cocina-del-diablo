@@ -74,7 +74,7 @@
       {% for starter in starters %}
           <li class="menu-items">
             <h5 class="text-center">{{ starter.title }} | {{ starter.price }}</h5>
-            <p class="menu-desc">{{ starter.description | safe }}</p>
+            {{ starter.description |safe }}
           </li>
       {% endfor %}
   </ul>
@@ -85,7 +85,7 @@
       {% for main in mains %}
           <li  class="menu-items">
               <h5 class="text-center">{{ main.title }} | {{ main.price }}</h5>
-              <p class="menu-desc">{{ main.description | safe }}</p>
+              {{ main.description |safe }}
           </li>
       {% endfor %}
   </ul>
@@ -96,7 +96,7 @@
       {% for dessert in desserts %}
           <li  class="menu-items">
               <h5 class="text-center">{{ dessert.title }} | {{ dessert.price }}</h5>
-              <p class="menu-desc">{{ dessert.description | safe }}</p>
+              {{ dessert.description |safe }}
           </li>
       {% endfor %}
   </ul>
@@ -114,7 +114,7 @@
         {% if starter.menu.name == 'Set menu for 2' %}
           <li class="menu-items">
             <h5 class="text-center">{{ starter.title }} | {{ starter.price }}</h5>
-            <p class="menu-desc">{{ starter.description | safe }}</p>
+            {{ starter.description |safe }}
           </li>
         {% endif %}
       {% endfor %}
@@ -127,7 +127,7 @@
         {% if main.menu.name == 'Set menu for 2' %}
           <li  class="menu-items">
               <h5 class="text-center">{{ main.title }} | {{ main.price }}</h5>
-              <p class="menu-desc">{{ main.description | safe }}</p>
+              {{ main.description |safe }}
           </li>
         {% endif %}
       {% endfor %}
@@ -140,7 +140,7 @@
         {% if dessert.menu.name == 'Set menu for 2' %}
           <li  class="menu-items">
               <h5 class="text-center">{{ dessert.title }} | {{ dessert.price }}</h5>
-              <p class="menu-desc">{{ dessert.description | safe }}</p>
+              {{ dessert.description |safe }}
           </li>
         {% endif %}
       {% endfor %}
@@ -158,7 +158,7 @@
         {% if starter.menu.name == 'Theatre Menu' %}
           <li class="menu-items">
             <h5 class="text-center">{{ starter.title }} | {{ starter.price }}</h5>
-            <p class="menu-desc">{{ starter.description | safe }}</p>
+            {{ starter.description |safe }}
           </li>
           {% endif %}
       {% endfor %}
@@ -171,7 +171,7 @@
         {% if main.menu.name == 'Theatre Menu' %}
           <li  class="menu-items">
               <h5 class="text-center">{{ main.title }} | {{ main.price }}</h5>
-              <p class="menu-desc">{{ main.description | safe }}</p>
+              {{ main.description |safe }}
           </li>
       {% endif %}
     {% endfor %}
@@ -184,7 +184,7 @@
         {% if dessert.menu.name == 'Theatre Menu' %}
           <li  class="menu-items">
               <h5 class="text-center">{{ dessert.title }} | {{ dessert.price }}</h5>
-              <p class="menu-desc">{{ dessert.description | safe }}</p>
+              {{ dessert.description |safe }}
           </li>
         {% endif %}
       {% endfor %}
