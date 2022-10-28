@@ -8,12 +8,13 @@
 
 ### - By Alan Bushell
 
-## **[Live site]()**
+## **[Live site](https://devils-kitchen.herokuapp.com/)**
 
-------------------------------------------------------------------
+---
 
 ## **[Repository](https://github.com/Alan-Bushell/la-cocina-del-diablo)**
-------------------------------------------------------------------
+
+---
   
 ## Table of contents
 <a name="contents">Back to Top</a>
@@ -30,7 +31,6 @@
  11. [ Acknowledgements](#acknowledgements)  
  
 
-[Back to Top of page](#contents)
 ## UX
 
 <a name="ux"></a>
@@ -614,7 +614,28 @@ Creating a clone enables you to make a copy of the repository at that point in t
 ##### Md bootstrap
   - I went through the bootstrap navigation information and footer information to determine how best to approach my desired design.
   - I always find Md Bootstrap helpful with examples of how best to implement boostrap components.
+  
+  
+##### Pexels
+  - I samples some images from pexels to help fill out the color of this project.
+  Here is a list of images used:
+  
+  Pexels images:
 
+- Wine pic: https://www.pexels.com/photo/clear-footed-glass-beside-bowl-370984/
+
+- table food pic: https://www.pexels.com/photo/photo-of-sliced-cheese-on-wooden-surface-4087609/
+
+- dark kitchen pic: https://www.pexels.com/search/restaurant%20flames/?orientation=landscape
+
+- bar  https://www.pexels.com/photo/person-sitting-near-bottles-1554654/
+
+- venue - https://www.pexels.com/photo/group-of-people-in-a-concert-during-night-time-5152546/
+
+- event image - https://www.pexels.com/photo/music-band-performs-on-stage-during-nighttime-736355/
+  
+  > All images sourced from Pexels and any credit is owed to the owners of the photos who have very kindly shared them for free usage.
+  
 
 [Back to Top of page](#contents)
 
