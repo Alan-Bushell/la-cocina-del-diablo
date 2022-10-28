@@ -41,10 +41,10 @@
 ## Overview
 
 La Cocina Del diablo is a Fictional restaurant I decided to come up with and design a website for.  
-The main goal of the website is to allow users to view some photos of the venue, see what they have to offer and if it is to their liking then the user can create an account and use it to make reservation requests.
+The main goal of the website is to allow users to view some photos of the venue, see what they have to offer, view the menu and if it is to their liking then the user can create an account and use it to make reservation requests.
 
 ### Design
-Once the name was chosen I decided that I wanted this website to be modern, minimalistic in it's appearance to to use base colors of Black and White where possible.
+Once the name was chosen I decided that I wanted this website to be modern, minimalistic in it's appearance to use base colors of Black and White where possible.
 I only deviate from this where it helps user experience in regards to buttons, links or feedback from the booking feature.
 
 ### Site User
@@ -157,10 +157,10 @@ While USER STORY: Events#6 has some parts completed in terms of displaying upcom
 
 ##### Dynamic Menu listings
 
- - The website displays dynamic menus that are updated on the back end and shown on the front-end depending on which menu the user select.
+ - The website displays dynamic menus that are updated on the back end and shown on the front-end depending on which menu the user selects.
  - If the menu is updated by the business owner then this change will reflect on the front end.
  - Additionally if the site owner wants to add extra items to the menus they will also display for customers.
- - This allows the business owner to make easy changes, change pricing, dishes, or even descriptions easily
+ - This allows the business owner to make easy changes, change pricing, dishes, or even descriptions easily.
 
 ##### Events
 
@@ -170,7 +170,7 @@ While USER STORY: Events#6 has some parts completed in terms of displaying upcom
 
 ##### Booking System
 
- - Once a user has created an account they can make reservation requests with the business
+ - Once a user has created an account they can make reservation requests with the business.
  - The site user only has to check the bookings field at the start of each day and decide if they have space to accommodate the bookings. 
  - If they have space they can accept the booking and this will display in the customer / users profile.
  - If they do not have space the site owner can decline the booking and the user / customer would be notified that the reservation has been declined.
@@ -248,27 +248,66 @@ While USER STORY: Events#6 has some parts completed in terms of displaying upcom
 
 
 <a name="left"></a>
-# Features Left to implement
+## Features left to Implement 
 
-### Additional ideas
+
+ - Add ability for customers to purchase / book tickets for events on their account get a copy by email and to the profile booking section of their account.
+ - Add e-mail notification for any changes to bookings made through the site. For example when a booking request has gone from pending to approved the user gets an email notification to advise them of this change.
+ - Allow users to comment on events or share on social directly.
+ - Allow users to sign up with social media
+ - Add a specials section to the menu for the business to highlight the current specials easily.
+ - Originally I had the user image replace the profile icon on the navbar and would like to change that back in the next iteration. 
+ - Add a contact form with auto e-mail responses from the site.
+ - Incorporate a QR code generator for the events that once a ticket is issued a corresponding QR code is sent in an e-mail with the details of the booking. This would allow the business to scan the QR code to validate the ticket.
+ - Add an online ordering platform for users to want to order takeaway. Menu with a shopping cart and payment checkout.
+ - I originally planned to add a Boolean field for newsletter to the customer model but due to time constraints I decided against this at this time. In the future I would add this in to get consent from customers to build a mailing list for the business.
 
 
 <a name="tech"></a>
-# Technology Used
+##  Technology Used
+
 ### Html
-> Used to structure my webpages and the bones of any web project
+
+ - Used to structure my webpages and the base templating language
 
 ### CSS
-> Used to style and add layout to my project.
 
-### Javascript
+ - Custom CSS was written on large chunks of this site to make it as close to the wireframes as I felt it needed to be.
+
+### JavaScript
+
+ -  Used to add timeout function for messages as well as to enable the menu on index.html
 
 ### Python
 
+ -  Used for the logic in this project.
+
 ### Django
 
+ -  Framework used to build this project. Provides a ready installed admin panel and includes many helper template tags that make writing code quick and efficient.
+
 ### Font Awesome
-> Used for the home icon & the github icon used in this project.
+
+ -  Icon library used for the profile and admin panel section.
+
+### Bootstrap 5
+ - Used as the base front end framework to work alongside Django
+
+### Jinja Templating with Django
+ - Used to render logic within html documents and make the website more dynamic.
+
+### GitHub
+ - Used to store the code for this project & for the projects Kanban board used to complete it.
+
+### Heroku
+- Used to host and deploy this project
+
+### Cloudinary
+- Used to host the static files for this project including user profile images.
+
+### Git
+- Used for version control throughout the project and to ensure a good clean record of work done was maintained.
+
 
 <a name="testing"></a>
 # Testing
