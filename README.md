@@ -33,8 +33,16 @@
 ## UX
 
 <a name="ux"></a>
-### Pre-project Planning
+#### Pre-project Planning
 
+> Database Structure
+
+![Lucid Diagram](static/images/readme_images/erd-lucidchart.png)
+
+- When I decided on my initial concept of La concina del diablo I knew I needed to understand what type of data I would need to store and the relationships between them.
+- I created the above diagram on lucidchart to help guide me.
+- As of now when the project is finished the only model not implemented is the tickets model. 
+- As explained below I have decided to ommit this feature until a further release / iteration.
 
 # UX design
 
@@ -237,11 +245,16 @@ While USER STORY: Events#6 has some parts completed in terms of displaying upcom
 
 ![Restaurant booking details](static/images/readme_images/bookingnotice.png)
 
+- I decided that I wanted to have almost a restaurant booking terms so that on the reservation page it is just the form.
+
 ---
 
 > Footer
 
 ![Footer](static/images/readme_images/footer.png)
+
+- The footer was designed to provide information and also functionality to the website.
+- It includes base navigation but also provides contact information & opening times.
 
 ---
 
@@ -249,32 +262,49 @@ While USER STORY: Events#6 has some parts completed in terms of displaying upcom
 
 ![Reservation form](static/images/readme_images/bookingform.png)
 
+- The reservation form contains the fields needed for a typical restaurant booking
+- It is displayed over a nice paralax image.
+
 ---
 
 > Mobile Navigation
 
 ![Mobile Navigation](static/images/readme_images/mobilenavigation.png)
 
-#### Profile
+- I used bootstrap to ensure my site was rendered at the best quality possible on mobile devices.
+
+---
 
 > User profile
 
-
 ![User Profile](static/images/readme_images/userprofileinfo.png)
+
+- The user profile section displays the image for the user along with the personal details.
+- The user can amend all personal informayion except account number. This is actually the userID primary key. 
+- I have added 100 to the userID and keep it as an account number if a user needed to query their account.
+
+---
 
 > User bookings section
 
-
 ![User Bookings](static/images/readme_images/profilebookingssection.png)
+
+- The user booking section will show all bookings that have not been deleted.
+- I incorporated a traffic light system for the status that changes depending on the outcome.
+- When a customer submits a request the booking is in **awaiting confirmation** status.
+- The business owner then views the bookings and information on the backend. 
+- If they can accomodate the customer they move the status to confirmed, if they do not they move the booking to declined.
+- This information is then relayed to the customer through the bookings in their profile.
+
+---
 
 > User profile on mobile
 
-
 ![User Mobile](static/images/readme_images/mobileuserprofile.png)
 
+- User profile on mobile stacks in a column on mobile.
 
-
-
+---
 
 <a name="left"></a>
 ## Features left to Implement 
@@ -377,8 +407,8 @@ While USER STORY: Events#6 has some parts completed in terms of displaying upcom
 ### index.html
 
 
-![W3 Validation checker](static/images/readme_images/w3validationerrorshtml.png)
-#### Result: Errors
+![W3 Validation checker](static/images/readme_images/w3validation.png)
+#### Result: No Errors
 
 ### CSS Validation
 
@@ -389,22 +419,59 @@ While USER STORY: Events#6 has some parts completed in terms of displaying upcom
 <a name="bugs"></a>
 ## **Bugs**
 
+#### Django templating bug
+![W3 Validation checker](static/images/readme_images/w3validationerrorshtml.png)
+
+- When I ran my code through the w3 html validator I got over 40 errors that I did not expect.
+- Upon review I could see Django was submitting fresh <p> Tags around my templated content for menu descriptions.
+- I removed the existing <p> Tags from my HTML code and this issue was cleared.
+  
+#### Bookings not displaying
+  
+- When implementing the booking system to user profiles I linked the templates temporarily to the user-email.
+- When a user tried to book under another email address that did not match the one on their account the bookings basically dissapeared.
+- To fix this issue and also because I want users to be able to update their email I extended the user model with a customer model and linked each booking to userid.
+- This way the customer will always have their own bookings.
 
 <a name="deployment"></a>
 ## Deployment
 
-
+---
+  
 <a name="credits"></a>
 ## Credits
+  
+##### Dennis ivy
+  - I watched some of Dennis's videos on youtube around django signals and extending the user model.
+  - This inspired me to take this action however I followed on from the django documentation
+  
+  
+##### Md bootstrap
+  - I went through the bootstrap navigation information and footer information to determine how best to approach my desired design.
+  - I always find Md Bootstrap helpful with examples of how best to implement boostrap components.
+
+---
 
 <a name="content"></a>
 ## Content & Resources
-
-### Code Institute
-> Project created in line with course content and within portfolio project 4 scope.
+  
+##### Django Documentation
+  - Read through the django documentation multiple times when trying to implement models and other content.
+  
+##### W3 Schools
+  - Used for reference throughout for simple css examples.
+  
+##### Code Institute
+  - Course content for portfolio project 4 helped greatly in being able to complete this project.
+  - I found the walkthroughs informative and well paced.
+  
+---
 
 <a name="acknowlegements"></a>
 ## Acknowledgements
 
 ### Dick Vlandeeren
 > My mentor who provided me with constructive feedback  and guidance throughout.
+  
+### The tutors at Code institute
+> To all the tutors in CI, thank you for your patience. Special shout outs to Ger, John, Sean & Oisin.
