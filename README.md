@@ -370,6 +370,9 @@ While USER STORY: Events#6 has some parts completed in terms of displaying upcom
 ### Heroku
 - Used to host and deploy this project
 
+### Heroku PostgreSQL
+-Heroku PostgreSQL was used as the database for this project during development and in production.
+
 ### Cloudinary
 - Used to host the static files for this project including user profile images.
 
