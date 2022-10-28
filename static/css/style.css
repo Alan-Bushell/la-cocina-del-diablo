@@ -289,8 +289,7 @@ footer{
 
 #background-image-reservation{
     background: url("https://res.cloudinary.com/bushell23/image/upload/v1666961552/static/images/reservation.c77ea5051bc9.jpg") 50% 0 no-repeat fixed;
-    height: 80%;
-    min-height: 80%;
+    min-height: 90%;
     max-width: 100%;
 	
   /* Set up proportionate scaling */
