@@ -67,13 +67,15 @@ I only deviate from this where it helps user experience in regards to buttons, l
 > index.html
 
 
-![Desktop Navigation](static/images/readme_images/wireframe-index-page.png)
+![Index page](static/images/readme_images/wireframe-index-page.png)
+
+My goal for this project was to create a simple sleek website that allowed the restaurant to showcase it's venue & menu. I intentionally ensure the number of pages was at a minimum to ensure the core functionality was the focus.
 
 > profile.html
 
+![Profile page](static/images/readme_images/wireframe-profile-page.png)
 
-![Desktop Navigation](static/images/readme_images/wireframe-profile-page.png)
-
+ The profile page was always going to be fundimental to the project being a success. I wanted to ensure that users had some control over their information and that it was presented in a nice clean way. By adding a split panel on top and a bookings panel on the bottom my goal was to seperate everything into easy to understand areas.
 
 ## Agile Development
 
@@ -185,46 +187,73 @@ While USER STORY: Events#6 has some parts completed in terms of displaying upcom
 
 ![Desktop Navigation](static/images/readme_images/desktopnavigation.png)
 
-> Venue Cards
+ - The desktop navigation consists of a Home, Reservations and Events link. 
+ - If the user is logged in they have access to profiles through the profile icon.
+ - If the user is a superuser they will then also have access to the django admin panel through the link beside logout. 
 
+---
+
+> Venue Cards
 
 ![Venue Cards](static/images/readme_images/venuecards.png)
 
-> Menu collapsed
+- The venu cards are just a quick was to display the different features of the Business. 
+- They are a card deck that will be repeated below to convey structure of the site.
+- The 3 cards are for Restaurant, Bar, Venue. Think of the devils pitchfork as a trident and that's what you have with this business.
 
+---
+
+> Menu collapsed
 
 ![Menu Collapsed](static/images/readme_images/menuscollapsed.png)
 
-> Menu Expanded
+- The menu section consists of 3 menus. A la carte, Set menu and Theatre Menu.
+- If a customer picks either Theatre or Set menu they will be shown only the selected menu.
+- If the customer selects the A la carte menu they will see all menu items.
 
+---
+
+> Menu Expanded
 
 ![Menu Expanded](static/images/readme_images/menuexpanded.png)
 
-> Upcoming Events
+- The menu items are ordered by Starter, Main course, Dessert as you would expect to see on a restaurant menu
+- The design was made to actually make it feel like the user was holding the menu in their hands.
+- I set up the django templating so that if the business owner decides to add a dish to a menu then it will automatically display for them.
+- They can delete or update pricing on the backend and it will update straight away on the front end.
 
+---
+
+> Upcoming Events
 
 ![Upcoming Events](static/images/readme_images/upcomingeventscards.png)
 
-> Restaurant Booking Details
+- Upcoming events is a way for the business to show themed nights / gigs or holiday events.
+- In the future customers will be able to book tickets directly through the events page.
+  
+---
 
+> Restaurant Booking Details
 
 ![Restaurant booking details](static/images/readme_images/bookingnotice.png)
 
-> Footer
+---
 
+> Footer
 
 ![Footer](static/images/readme_images/footer.png)
 
-> Reservation form
+---
 
+> Reservation form
 
 ![Reservation form](static/images/readme_images/bookingform.png)
 
+---
+
 > Mobile Navigation
 
-
 ![Mobile Navigation](static/images/readme_images/mobilenavigation.png)
-
 
 #### Profile
 
