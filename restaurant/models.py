@@ -11,6 +11,7 @@ BOOKING_STATUS = ((0, "Awaiting Confirmation"), (1, "Confirm Booking"),
                   (2, "Booking Declined"))
 
 
+# Customer model extending base user model
 class Customer(models.Model):
     user = models.OneToOneField(User, null=True, on_delete=models.CASCADE)
     first_name = models.CharField(max_length=40, null=True, blank=True)
@@ -23,6 +24,7 @@ class Customer(models.Model):
         return self.user.username
 
 
+# Booking model for when making a reservation
 class Booking(models.Model):
     first_name = models.CharField(max_length=40, null=False, blank=False)
     last_name = models.CharField(max_length=100, null=False, blank=False)
@@ -38,6 +40,7 @@ class Booking(models.Model):
         return self.first_name + ' ' + self.last_name + "'s" + ' Booking'
 
 
+# Event model
 class Event(models.Model):
     title = models.CharField(max_length=200)
     slug = models.SlugField(unique=True, null=True)
@@ -59,6 +62,7 @@ class Event(models.Model):
         return self.title
 
 
+# Menu model to house each menu
 class Menu(models.Model):
     name = models.CharField(max_length=100)
     slug = models.SlugField(unique=True, null=True)
@@ -77,6 +81,7 @@ class Menu(models.Model):
         return self.name
 
 
+# Starter model
 class Starter(models.Model):
     title = models.CharField(max_length=50)
     description = models.TextField(max_length=200)
@@ -87,6 +92,7 @@ class Starter(models.Model):
         return self.title
 
 
+# Main dish model
 class MainDish(models.Model):
     title = models.CharField(max_length=50)
     description = models.TextField(max_length=200)
@@ -97,6 +103,7 @@ class MainDish(models.Model):
         return self.title
 
 
+# Desserts model
 class Dessert(models.Model):
     title = models.CharField(max_length=50)
     description = models.TextField(max_length=200)
@@ -107,12 +114,14 @@ class Dessert(models.Model):
         return self.title
 
 
+# Signal used to create customer once user created
 @receiver(post_save, sender=User)
 def create_user_customer(sender, instance, created, **kwargs):
     if created:
         Customer.objects.create(user=instance)
 
 
+# Signal used to save the customer if user is saved
 @receiver(post_save, sender=User)
 def save_user_customer(sender, instance, created, **kwargs):
     instance.customer.save()

@@ -2,9 +2,8 @@ from django.contrib import admin
 from .models import Menu, Starter, MainDish, Dessert, Event, Booking, Customer
 from django_summernote.admin import SummernoteModelAdmin
 
-# Register your models here.
 
-
+# Events
 @admin.register(Event)
 class EventAdmin(SummernoteModelAdmin):
 
@@ -16,6 +15,7 @@ class EventAdmin(SummernoteModelAdmin):
     summernote_fields = ('description')
 
 
+# Bookings
 @admin.register(Booking)
 class BookingAdmin(SummernoteModelAdmin):
 
@@ -27,6 +27,7 @@ class BookingAdmin(SummernoteModelAdmin):
     list_filter = ('booking_status', 'booking_date')
 
 
+# Customers
 @admin.register(Customer)
 class CustomerAdmin(SummernoteModelAdmin):
 
@@ -46,6 +47,7 @@ class MenuAdmin(SummernoteModelAdmin):
     summernote_fields = ('description')
 
 
+# Starters
 @admin.register(Starter)
 class StarterAdmin(SummernoteModelAdmin):
 
@@ -55,6 +57,7 @@ class StarterAdmin(SummernoteModelAdmin):
     summernote_fields = ('description')
 
 
+# Main Dish
 @admin.register(MainDish)
 class MainDishAdmin(SummernoteModelAdmin):
 
@@ -64,6 +67,7 @@ class MainDishAdmin(SummernoteModelAdmin):
     summernote_fields = ('description')
 
 
+# Desserts
 @admin.register(Dessert)
 class DessertAdmin(SummernoteModelAdmin):
 

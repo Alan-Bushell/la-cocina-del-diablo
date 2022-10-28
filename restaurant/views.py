@@ -6,9 +6,8 @@ from .models import Menu, Starter, MainDish, Dessert, Event, Booking, Customer
 from django.contrib.auth.models import User
 from django.contrib import messages
 
-# Create your views here.
 
-
+# Class for events list
 class EventList(generic.ListView):
     model = Event
     queryset = Event.objects.filter(status=1).order_by('-event_added')
@@ -16,6 +15,7 @@ class EventList(generic.ListView):
     paginate_by = 5
 
 
+# Class for event details view
 class EventDetail(View):
 
     def get(self, request, slug, *args, **kwargs):
@@ -30,6 +30,7 @@ class EventDetail(View):
             })
 
 
+# Class for the starter list for the menu
 class StarterList(generic.ListView):
     model = Starter
     queryset = Starter.objects.get
@@ -41,7 +42,7 @@ class StarterList(generic.ListView):
 
 
 def index(request):
-    # Returns the index.html page
+    # Returns the index.html page and menu items
     menus = Menu.objects.all()
     starters = Starter.objects.all()
     mains = MainDish.objects.all()
@@ -56,7 +57,7 @@ def index(request):
 
 def profile(request):
     """
-    renders profile page
+    renders profile page and requests all bookings
     """
     bookings = Booking.objects.all()
     return render(request, "profile.html",
@@ -82,6 +83,7 @@ def restaurant(request):
     return render(request, "restaurant.html", {'form': BookingForm})
 
 
+# Edit booking function
 def edit_booking(request, booking_id):
     booking = get_object_or_404(Booking, id=booking_id)
     form = BookingForm(instance=booking)
@@ -99,6 +101,7 @@ def edit_booking(request, booking_id):
     return render(request, 'edit_booking.html', context)
 
 
+# Delete booking function
 def delete_booking(request, booking_id):
     booking = get_object_or_404(Booking, id=booking_id)
     booking.delete()
@@ -107,6 +110,7 @@ def delete_booking(request, booking_id):
     return redirect('profile')
 
 
+# Edit username function
 def edit_username(request, user_id):
     user = get_object_or_404(User, id=user_id)
     form = UserForm(instance=user)
@@ -124,6 +128,7 @@ def edit_username(request, user_id):
     return render(request, 'edit_username.html', context)
 
 
+# Edit image function
 def edit_image(request, user_id):
     user = get_object_or_404(User, id=user_id)
     customer = get_object_or_404(Customer, user=user)
@@ -145,6 +150,7 @@ def edit_image(request, user_id):
     return render(request, 'edit_image.html', context)
 
 
+# Edit profile info function
 def edit_profile(request, user_id):
     customer = get_object_or_404(Customer, user=user_id)
     form = ProfileForm(instance=customer)
@@ -162,6 +168,7 @@ def edit_profile(request, user_id):
     return render(request, 'edit_profile.html', context)
 
 
+# Delete user account function
 def delete_account(request, user_id):
     user = get_object_or_404(User, id=user_id)
     user.delete()

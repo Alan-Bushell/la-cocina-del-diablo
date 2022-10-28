@@ -7,6 +7,7 @@ from .models import Booking, Customer, User
 from django.forms import ModelForm
 
 
+# initial booking form for restaurant
 class BookingForm(ModelForm):
 
     def __init__(self, *args, **kwargs):
@@ -30,6 +31,7 @@ class BookingForm(ModelForm):
                   'booking_date', 'booking_time', 'number_of_attendees']
 
 
+# User form for changing username
 class UserForm(ModelForm):
 
     def __init__(self, *args, **kwargs):
@@ -44,6 +46,7 @@ class UserForm(ModelForm):
         fields = ['username']
 
 
+# Profile form for updating: email, phone, name
 class ProfileForm(ModelForm):
 
     def __init__(self, *args, **kwargs):
@@ -61,6 +64,7 @@ class ProfileForm(ModelForm):
         fields = ['first_name', 'last_name', 'contact_phone', 'email']
 
 
+# Image form to change profile image
 class ImageForm(ModelForm):
 
     def __init__(self, *args, **kwargs):
