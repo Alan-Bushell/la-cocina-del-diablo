@@ -628,6 +628,14 @@ While USER STORY: Events#6 has some parts completed in terms of displaying upcom
 - To fix this issue and also because I want users to be able to update their email I extended the user model with a customer model and linked each booking to userid.
 - This way the customer will always have their own bookings.
 
+
+#### Image not loading once deployed
+
+- Once I deployed the project to heroku and finished development, only one of the images in cloudinary did not load.
+- I was being presented with a 404 even though the file was in cloudinary and the file path was correct.
+- As a work around Scott (tutor from CI) advised to copy the direct URL to the image rather than relying on the Cloudinary api to render the image.
+- Once I reloaded the static and pushed to github, my heroku app reloaded and was deployed and working.
+
 [Back to Top of page](#contents)
 
 ---
@@ -766,4 +774,4 @@ Creating a clone enables you to make a copy of the repository at that point in t
 > My mentor who provided me with constructive feedback  and guidance throughout.
   
 ### The tutors at Code institute
-> To all the tutors in CI, thank you for your patience. Special shout outs to Ger, John, Sean & Oisin.
+> To all the tutors in CI, thank you for your patience. Special shout outs to Ger, John, Sean, Oisin & Scott.
