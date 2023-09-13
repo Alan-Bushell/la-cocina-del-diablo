@@ -1,7 +1,8 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap');
+
 body{
     display: flex;
     flex-direction: row;
-    
 }
 
 .image-container{
@@ -27,14 +28,15 @@ body{
 }
 
 .fa-circle-user { 
-    color: gray;
-    font-size: 26px;
+    color: rgb(103, 32, 32);
+    font-size: 32px;
+    margin-left: 100px;
 }
 
 .fa-unlock {
-    color: gray;
-    font-size: 28px;
-    line-height: normal;
+    color: rgb(103, 32, 32);
+    font-size: 30px;
+    line-height: 1.1;
 }
 
 .nav-main-links{
@@ -42,6 +44,20 @@ body{
     display: flex;
     flex-direction: row;
     justify-content: center;
+}
+
+.logo-font{
+    font-family: dancing script, cursive;
+    font-size: 40px;
+    padding: 0;
+    margin: 0;
+}
+
+.navbar-brand{
+    font-family: dancing script, cursive;
+    font-size: 30px;
+    padding: 0;
+    margin: 0;
 }
 
 .profile-heading{
@@ -160,6 +176,7 @@ hr{
     transition: 0.3s;
     color: white;
     border: solid 1px white;
+    margin-bottom: 500px;
 }
 
 .btn-primary{
@@ -290,7 +307,7 @@ footer{
 
 #background-image-reservation{
     background: url("https://res.cloudinary.com/bushell23/image/upload/v1666961552/static/images/reservation.c77ea5051bc9.jpg") 50% 0 no-repeat fixed;
-    min-height: 90%;
+    min-height: 100vh;
     max-width: 100%;
 	
   /* Set up proportionate scaling */
