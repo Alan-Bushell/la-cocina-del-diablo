@@ -16,7 +16,7 @@ import os
 import dj_database_url
 from django.contrib.messages import constants as messages
 if os.path.isfile('env.py'):
-    import devils_kitchen.env as env
+    import env
 import cloudinary
 import cloudinary.uploader
 import cloudinary.api
@@ -108,18 +108,17 @@ WSGI_APPLICATION = 'devils_kitchen.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
+# DATABASES = {
+#    'default': {
+#        'ENGINE': 'django.db.backends.sqlite3',
+#        'NAME': BASE_DIR / 'db.sqlite3',
+#    }
+# }
+
+
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-    }
+    'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))
 }
-
-
-#DATABASES = {
-#    'default': dj_database_url.config(default=os.environ.get('DATABASE_URL')).copy()
-#}
-
 
 # Password validation
 # https://docs.djangoproject.com/en/3.2/ref/settings/#auth-password-validators
@@ -167,7 +166,7 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 MEDIA_URL = '/media/'
 
-
+"""
 # Configure Cloudinary using os.environ.get()
 CLOUDINARY_CLOUD_NAME = os.environ.get('CLOUDINARY_CLOUD_NAME')
 CLOUDINARY_API_KEY = os.environ.get('CLOUDINARY_API_KEY')
@@ -179,14 +178,11 @@ CLOUDINARY_STORAGE = {
     'API_KEY': CLOUDINARY_API_KEY,
     'API_SECRET': CLOUDINARY_API_SECRET,
 }
-
-
-
+"""
 # Use Cloudinary for media file storage
 DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
 
 ACCOUNT_EMAIL_VERIFICATION = 'none'
-
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
