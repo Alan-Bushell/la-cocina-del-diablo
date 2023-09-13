@@ -21,23 +21,27 @@ class Customer(models.Model):
     profile_image = CloudinaryField('image', default='placeholder')
 
     def __str__(self):
-        return self.user.username
+        if self.user:
+            return f"{self.first_name + ' ' + self.last_name}"
+        else:
+            return f"New Customer / Not Provided"
 
 
 # Booking model for when making a reservation
 class Booking(models.Model):
-    first_name = models.CharField(max_length=40, null=False, blank=False)
-    last_name = models.CharField(max_length=100, null=False, blank=False)
     email = models.EmailField()
     contact_phone = models.CharField(max_length=15, null=False, blank=False)
     booking_date = models.DateField(null=False, blank=False)
     booking_time = models.CharField(null=False, blank=False, max_length=5)
     number_of_attendees = models.IntegerField(default=2, blank=False)
     booking_status = models.IntegerField(choices=BOOKING_STATUS, default=0)
-    customer = models.ForeignKey(Customer, null=True, on_delete=models.CASCADE)
+    customer = models.ForeignKey('Customer', null=True, on_delete=models.CASCADE)
 
     def __str__(self):
-        return self.first_name + ' ' + self.last_name + "'s" + ' Booking'
+        if self.customer:
+            return f"Booking for {self.customer}"
+        else:
+            return f"Booking (Customer or User not specified)"
 
 
 # Event model

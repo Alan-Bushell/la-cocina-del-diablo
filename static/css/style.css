@@ -50,7 +50,6 @@ body{
 .profile-page{
     height: fit-content;
     width: 100%;
-    border: black solid 1px;
     padding: 5px;
 }
 
@@ -61,14 +60,13 @@ body{
 }
 
 .profile-image{
-    height: 100%;
-    width: 100%;
+    max-height: 300px;
+    width: 300px;
     border-radius: 20px;
-    border: solid black 2px;
 }
 
 .image-col{
-    border-right: solid black 1px;
+    border-right: solid grey 5px;
 }
 
 hr{
@@ -83,11 +81,15 @@ hr{
 .reservation{
     background-color: rgba(34, 33, 32, 0.9);
     color: white;
+    border-radius: 10px;
+    margin: 0;
 }
 
 .alternate-reservation{
     background-color: #f3ecec;
     color: black;
+    border-radius: 10px;
+    margin: 0;
 }
 
 .underline{
@@ -99,7 +101,6 @@ hr{
 }
 
 .profile-booking{
-    border: solid black 1px;
     border-top: 0;
 }
 
@@ -141,8 +142,9 @@ hr{
 
 .cancel-booking-link{
     text-decoration: none;
-    color: red;
+    color: white;
     font-weight: 500;
+    font-size: 15px;
     margin-bottom: 10px;
 }
 
@@ -163,7 +165,6 @@ hr{
 .btn-primary{
     margin-top: 15px;
     text-align: center;
-    width: 25%;
     margin-bottom: 15px;
 }
 
@@ -480,9 +481,7 @@ ul.fa-ul{
     }
 
     .edit-profile-link{
-        width: 80%;
-        margin-left: 10%;
-        margin-bottom: 20px;
+        margin: 10px 0px;
     }
 }
 
@@ -521,10 +520,6 @@ ul.fa-ul{
 
     .edit-button{
         display: block;
-    }
-
-    .btn-primary{
-        width: 60%;
     }
 
     footer{
@@ -566,9 +561,6 @@ ul.fa-ul{
         margin-left: 15%;
     }
 
-    .btn-primary{
-        width: 50%;
-    }
 }
 
 /* Extra large screens */
@@ -581,8 +573,7 @@ ul.fa-ul{
     }
 
     .reservation-form{
-        width: 50%;
-        margin-left: 25%;
+        margin-bottom: 500px;
     }
 
 } 

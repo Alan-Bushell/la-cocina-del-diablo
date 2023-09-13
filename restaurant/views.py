@@ -5,6 +5,7 @@ from restaurant.forms import ImageForm
 from .models import Menu, Starter, MainDish, Dessert, Event, Booking, Customer
 from django.contrib.auth.models import User
 from django.contrib import messages
+from django.contrib.auth.decorators import login_required
 
 
 # Class for events list
@@ -64,24 +65,29 @@ def profile(request):
                   {'bookings': bookings})
 
 
+@login_required
 def restaurant(request):
-    """
-    renders restaurant page
-    """
-    if request.POST:
+    if request.method == 'POST':
         form = BookingForm(request.POST)
         if form.is_valid():
+            customer = Customer.objects.get(user=request.user)
             instance = form.save(commit=False)
-            instance.customer = Customer.objects.get(user=request.user)
+            instance.customer = customer
             instance.save()
 
-        messages.success(request,
-                         'Your reservation request has been sent')
-        return redirect('profile')
+            messages.success(request, 'Your reservation request has been sent')
+            return redirect('profile')
+    else:
+        # Pass the user's data to the form if available
+        customer = Customer.objects.get(user=request.user)
+        initial_data = {}
+        if customer.user:
+            initial_data['email'] = customer.user.email
+            initial_data['contact_phone'] = customer.contact_phone
+            # Add more fields as needed
+        form = BookingForm(initial=initial_data)
 
-    form = BookingForm(request.POST)
-    return render(request, "restaurant.html", {'form': BookingForm})
-
+    return render(request, "restaurant.html", {'form': form})
 
 # Edit booking function
 def edit_booking(request, booking_id):
