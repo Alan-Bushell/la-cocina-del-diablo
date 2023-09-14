@@ -107,25 +107,6 @@ TEMPLATES = [
 WSGI_APPLICATION = 'devils_kitchen.wsgi.application'
 
 
-LOGGING = {
-    'version': 1,
-    'disable_existing_loggers': False,
-    'handlers': {
-        'file': {
-            'level': 'ERROR',
-            'class': 'logging.FileHandler',
-            'filename': '/logfile.log',
-        },
-    },
-    'loggers': {
-        'django': {
-            'handlers': ['file'],
-            'level': 'ERROR',
-            'propagate': True,
-        },
-    },
-}
-
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
@@ -188,12 +169,12 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 MEDIA_URL = '/media/'
 
-"""
+
 # Configure Cloudinary using os.environ.get()
 CLOUDINARY_CLOUD_NAME = os.environ.get('CLOUDINARY_CLOUD_NAME')
 CLOUDINARY_API_KEY = os.environ.get('CLOUDINARY_API_KEY')
 CLOUDINARY_API_SECRET = os.environ.get('CLOUDINARY_API_SECRET')
-
+"""
 # Configure Cloudinary Storage
 CLOUDINARY_STORAGE = {
     'CLOUD_NAME': CLOUDINARY_CLOUD_NAME,
