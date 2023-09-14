@@ -1,1 +1,1 @@
-web: gunicorn devils_kitchen.wsgi
+web: python manage.py collectstatic --noinput && gunicorn devils_kitchen.wsgi
